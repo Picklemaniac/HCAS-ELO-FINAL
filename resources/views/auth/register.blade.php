@@ -111,7 +111,7 @@
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>Emailadress is al in gebruik</strong>
                                     </span>
                                 @enderror
                             </div>

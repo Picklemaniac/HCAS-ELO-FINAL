@@ -33,7 +33,7 @@ class CreateNewUser implements CreatesNewUsers
             'lidnummer' => ['required', 'integer', Rule::unique(User::class)],
             'teamnummer' => ['required', 'string', 'max:255'],
             'voornaam' => ['required', 'string', 'max:255'],
-            'tussenvoegsel' => ['string', 'max:255'],
+            'tussenvoegsel' => ['max:255'],
             'achternaam' => ['required', 'string', 'max:255'],
         ])->validate();
 
