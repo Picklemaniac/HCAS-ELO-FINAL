@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <title>Details Oefeningen</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,13 +23,13 @@
                 <div class="w3-container">
                     <h3><b>Lopen met de bal met afronden</b></h3>
                     <iframe width="100%" height="250px"
-                            src="https://www.youtube.com/watch?v=DMWuT8bV10g">
+                            src="https://www.youtube.com/embed/n_yzZijLt4E">
                     </iframe>
                 </div>
 
                 <div class="w3-container">
                     <h4>Details</h4>
-                    <h6>Lorum Ipsum</h6>
+                    <h6>Voorbeeld data hier</h6>
                 </div>
             </div>
         </div>
@@ -37,15 +37,10 @@
         <div class="w3-col l4">
             <div class="w3-card w3-margin w3-margin-top">
                 <div class="w3-container w3-white">
-                    <h4><b>Terug naar Dashboard</b></h4>
+                    <h4><b>Terug</b></h4>
                 </div>
             </div>
             <hr>
-            <div class="w3-card w3-margin w3-margin-top">
-                <div class="w3-container w3-white">
-                    <h4><b>Training Bekijken</b></h4>
-                </div>
-            </div>
         </div>
     </div><br>
 </div>

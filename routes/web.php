@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/userDashboard', function () {
     return view('userDashboard');
 })->middleware('auth');
+
+Route::get('/detailsOefeningen', function () {
+    return view('DetailsOefeningen');
+})->middleware('auth');
