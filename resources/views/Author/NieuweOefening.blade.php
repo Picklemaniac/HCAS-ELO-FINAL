@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>Document</title>
+    <title>Nieuwe Oefening</title>
 </head>
 <body>
 <h1>Oefening toevoegen:</h1>
@@ -39,7 +39,7 @@
 
         Tips:  <br> <textarea id="" cols="50" rows="5"></textarea> <p>
 
-        <input type="submit" value="Verzenden" name="" id="">
+        <input type="submit" value="Opslaan" name="" id="">
     </form>
 </body>
 </html>
