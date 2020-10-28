@@ -27,7 +27,7 @@
             <div class="w3-card-4 w3-margin w3-white">
                 <div class="w3-container">
                     <h3><b>Training 12</b></h3>
-                    <h5>[Datum]</h5>
+                    <h5>10-22-2020</h5>
                 </div>
 
                 <div class="w3-container, gray">
@@ -53,7 +53,12 @@
         <div class="w3-col l4">
             <div class="w3-card w3-margin w3-margin-top">
                 <div class="w3-container w3-white">
-                    <h4><a href="/">Uitloggen</a></h4>
+                    <h4>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit">Uitloggen</button>
+                        </form>
+                    </h4>
                 </div>
             </div>
             <hr>

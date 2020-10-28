@@ -22,6 +22,7 @@
             <div class="w3-card-4 w3-margin w3-white">
                 <div class="w3-container">
                     <h3><b>Lopen met de bal met afronden</b></h3>
+                    <h5>Door: [Auteur]</h5>
                     <iframe width="100%" height="250px"
                             src="https://www.youtube.com/embed/n_yzZijLt4E">
                     </iframe>
@@ -29,7 +30,16 @@
 
                 <div class="w3-container">
                     <h4>Details</h4>
-                    <h6>Voorbeeld data hier</h6>
+                    <p>Traininsonderdeel: [Data]</p>
+                    <p>Spelfase: [Data]</p>
+                    <p>werkvorm: [Data]</p>
+                    <p>Duur: [Data]</p>
+                    <p>Organisatie: [Data]</p>
+                    <p>Organisatie: [Data]</p>
+                    <p>Hulpmiddelen: [Data]</p>
+                    <p>Aandachtspunten: [Data]</p>
+                    <p>Veel voorkomende fouten: [Data]</p>
+                    <p>Makkelijker maken: [Data]</p>
                 </div>
             </div>
         </div>
@@ -37,7 +47,7 @@
         <div class="w3-col l4">
             <div class="w3-card w3-margin w3-margin-top">
                 <div class="w3-container w3-white">
-                    <h4><b>Terug</b></h4>
+                    <h4><a href="/userDashboard">Terug</a></h4>
                 </div>
             </div>
             <hr>
