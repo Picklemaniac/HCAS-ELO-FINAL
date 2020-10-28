@@ -24,3 +24,7 @@ Route::get('/userDashboard', function () {
 Route::get('/detailsOefeningen', function () {
     return view('DetailsOefeningen');
 })->middleware('auth');
+
+Route::get('/NieuweOefening', function () {
+    return view('author.NieuweOefening');
+})->middleware('auth');

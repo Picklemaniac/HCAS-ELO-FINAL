@@ -59,6 +59,13 @@
                             <button type="submit">Uitloggen</button>
                         </form>
                     </h4>
+                    <h4> Groep:
+                       <select>
+                           <option>H1</option>
+                           <option>D2</option>
+                           <option>MA1</option>
+                       </select>
+                    </h4>
                 </div>
             </div>
             <hr>
