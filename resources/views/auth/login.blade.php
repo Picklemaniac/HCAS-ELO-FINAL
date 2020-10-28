@@ -9,7 +9,7 @@
         body, html {
             height: 100%;
             background-repeat: no-repeat;
-            background-image: linear-gradient(rgb(4, 145, 162), rgb(12, 7, 33));
+            background-image: linear-gradient(#ef6c00, #ffa726);
         }
 
         .card-container.card {
@@ -140,25 +140,32 @@
         .forgot-password:active,
         .forgot-password:focus{
             color: rgb(12, 97, 33);
+
         }
+        .input {
+            margin: 10px;
+            padding: 5px;
+        }
+        .center {
+            margin: 10px;
+            padding: 5px    ;
+        }
+
     </style>
 </head>
 <body>
 <div class="container">
     <div class="card card-container">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('HCAS Inloggen') }}</div>
+                <div class="card-header input">{{ __('HCAS Inloggen') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Gebruikersnaam') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autofocus>
+                            <div class="col-md-6 input">
+                                <input placeholder="Gebruikersnaam" id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autofocus>
 
                                 @error('username')
                                 <span class="invalid-feedback" role="alert">
@@ -169,10 +176,8 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Wachtwoord') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required>
+                            <div class="col-md-6 input">
+                                <input id="password" placeholder="Wachtwoord" type="password" class="form-control  @error('password') is-invalid @enderror" name="password" required>
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -182,14 +187,13 @@
                             </div>
                         </div>
 
-                        <div class="col-md-8 offset-md-4">
+                        <div class="col-md-8 offset-md-4 center">
                             <button type="submit" class="btn btn-primary">
                                 {{ __('Login') }}
                             </button>
                         </div>
                     </form>
                 </div>
-            </div>
         </div>
     </div>
 </div>
