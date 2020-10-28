@@ -5,23 +5,98 @@
     <title>Registreren</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        body, html {
+            height: 100%;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(#ef6c00, #ffa726);
+        }
+
+        .card-container.card {
+            max-width: 350px;
+            padding: 40px 40px;
+        }
+
+        .btn {
+            font-weight: 700;
+            height: 36px;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            cursor: default;
+        }
+
+        /*
+         * Card component
+         */
+        .card {
+            background-color: #F7F7F7;
+            /* just in case there no content*/
+            padding: 20px 25px 30px;
+            margin: 0 auto 25px;
+            margin-top: 50px;
+            /* shadows and rounded borders */
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        }
+
+
+
+        .form-signin #inputEmail,
+        .form-signin #inputPassword {
+            direction: ltr;
+            height: 44px;
+            font-size: 16px;
+        }
+
+        .form-signin input[type=email],
+        .form-signin input[type=password],
+        .form-signin input[type=text],
+        .form-signin button {
+            width: 100%;
+            display: block;
+            margin-bottom: 10px;
+            z-index: 1;
+            position: relative;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .form-signin .form-control:focus {
+            border-color: rgb(104, 145, 162);
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+        }
+        .input {
+            margin: 10px;
+            padding: 5px;
+        }
+        .center {
+            margin: 10px;
+            padding: 5px    ;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="card card-container">
+                <div class="card-header center">{{ __('Nieuw Acount Toevoegen') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="form-group row">
-                            <label for="lidnummer"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('Lidnummer') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-6 input">
                                 <input id="lidnummer" type="text"
+                                       placeholder="Lidnummer"
                                        class="form-control @error('lidnummer') is-invalid @enderror" name="lidnummer"
                                        value="{{ old('lidnummer') }}" required autofocus>
 
@@ -34,11 +109,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="teamnummer"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('Team') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-6 input">
                                 <input id="teamnummer" type="text"
+                                       placeholder="Teamnummer"
                                        class="form-control @error('teamnummer') is-invalid @enderror" name="teamnummer"
                                        value="{{ old('teamnummer') }}" required>
 
@@ -51,11 +124,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="voornaam"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('Voornaam') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-6 input">
                                 <input id="voornaam" type="text"
+                                       placeholder="Voornaam"
                                        class="form-control @error('voornaam') is-invalid @enderror" name="voornaam"
                                        value="{{ old('voornaam') }}" required>
 
@@ -68,11 +139,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="tussenvoegsel"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('Tussenvoegsel') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-6 input">
                                 <input id="tussenvoegsel" type="text"
+                                       placeholder="Tussenvoegsel"
                                        class="form-control @error('tussenvoegsel') is-invalid @enderror"
                                        name="tussenvoegsel" value="{{ old('tussenvoegsel') }}">
 
@@ -85,11 +154,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="achternaam"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('Achternaam') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-6 input">
                                 <input id="achternaam" type="text"
+                                       placeholder="Achternaam"
                                        class="form-control @error('achternaam') is-invalid @enderror" name="achternaam"
                                        value="{{ old('achternaam') }}">
 
@@ -102,11 +169,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-6 input">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                       placeholder="e-Mail"
                                        name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
@@ -118,11 +183,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="username"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('Gebruikersnaam') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-6 input">
                                 <input id="username" type="text"
+                                       placeholder="Gebruikersnaam"
                                        class="form-control @error('username') is-invalid @enderror" name="username"
                                        value="{{ old('username') }}">
 
@@ -135,11 +198,9 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('Wachtwoord') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-6 input">
                                 <input id="password" type="password"
+                                       placeholder="Wachtwoord"
                                        class="form-control @error('password') is-invalid @enderror" name="password"
                                        required autocomplete="new-password">
 
@@ -152,17 +213,15 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm"
-                                   class="col-md-4 col-form-label text-md-right">{{ __('Wachtwoord Herhalen') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-6 input">
                                 <input id="password-confirm" type="password" class="form-control"
+                                       placeholder="Herhaal Wachtwoord"
                                        name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4 center">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
