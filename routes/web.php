@@ -28,3 +28,7 @@ Route::get('/detailsOefeningen', function () {
 Route::get('/NieuweOefening', function () {
     return view('author.NieuweOefening');
 })->middleware('auth');
+
+Route::get('/trainerDashboard', function () {
+    return view('TrainerDashboard');
+})->middleware('auth');
