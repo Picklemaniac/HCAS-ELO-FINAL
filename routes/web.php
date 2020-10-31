@@ -40,3 +40,7 @@ Route::get('/detailsTrainingen', function () {
 Route::get('/AdminDashboard', function () {
     return view('admin.AdminDashboard');
 })->middleware('auth');
+
+Route::get('/AuteurDashboard', function () {
+    return view('author.AuthorDashboard');
+})->middleware('auth');

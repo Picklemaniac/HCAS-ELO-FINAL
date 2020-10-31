@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Details Trainingen</title>
+<title>User Dashboard</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -9,9 +9,14 @@
     body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     .gray {
         border-radius: 25px;
-        background-color: #F78B14;
+        background-color: lightgray;
         padding: 1%;
         margin: 2%;
+    }
+    body, html {
+        height: 100%;
+        background-repeat: no-repeat;
+        background-color: #F78B14;
     }
 </style>
 <body>
@@ -19,7 +24,7 @@
 <div class="w3-content" style="max-width:1400px">
 
     <header class="w3-container w3-center w3-padding-32">
-        <h1><b>HCAS Trainingen</b></h1>
+        <h1><b>Welkom [Naam]</b></h1>
     </header>
 
     <div class="w3-row">
@@ -68,7 +73,6 @@
                     </h4>
                 </div>
             </div>
-            <hr>
         </div>
     </div><br>
 </div>

@@ -43,7 +43,6 @@
                 <div class="w3-container w3-white">
                     <h4><a href="/userDashboard">Nieuwe Oefening Toevoegen</a></h4>
                 </div>
-                
             </div>
         </div>
     </div><br>
