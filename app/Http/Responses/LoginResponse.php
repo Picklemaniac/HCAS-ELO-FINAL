@@ -19,18 +19,18 @@ class LoginResponse implements LoginResponseContract
         $trainer = Auth::user()->IsTrainer;
         $author = Auth::user()->IsAuthor;
         $admin = Auth::user()->IsAdmin;
-        
+
         if ($admin == 1) {
-            return redirect('adminDashboard');
+            return redirect('AdminDashboard');
         }
         else if ($trainer == 1 && $author == 1) {
-            return redirect('trainerAuthorChoice');
+            return redirect('PopupKeuze');
         }
         else if ($trainer == 1) {
             return redirect('trainerDashboard');
         }
         else if ($author == 1) {
-            return redirect('NieuweOefening');
+            return redirect('AuteurDashboard');
         }
         else {
             return redirect('userDashboard');

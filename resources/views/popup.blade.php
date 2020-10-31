@@ -1,5 +1,5 @@
 <html>
-<title>Dashboard Trainers</title>
+<title>Keuze</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -85,10 +85,10 @@
 <body>
 <div>
     <div class="contentdiv">
-        <h2>Wilt u door naar de Auteur pagina om nieuwe oefeningen te maken of naar de Trainers pagina om nieuwe trainingen te maken?</h2>
-        <div>[Button hier naar de volgende pagina]</div>
+        <h2>Trainingen of Oefeningen?</h2>
+        <div><a href="trainerDashboard">Trainingen</a></div>
         <br>
-        <div>[Button hier naar de volgende pagina]</div>
+        <div><a href="AuteurDashboard">Oefeningen</a></div>
     </div>
 </div>
 </div>
