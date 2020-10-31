@@ -10,7 +10,7 @@
     body, html {
         height: 100%;
         background-repeat: no-repeat;
-        background-image: linear-gradient(#ef6c00, #ffa726);
+        background-color: #F78B14;
     }
     h1, h2, h4 {
         text-align: center;

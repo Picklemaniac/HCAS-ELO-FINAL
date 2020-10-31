@@ -10,10 +10,10 @@
     body, html {
         height: 100%;
         background-repeat: no-repeat;
-        background-image: linear-gradient(#ef6c00, #ffa726);
+        background-color: #F78B14;
     }
 </style>
-<body class="w3-light-grey">
+<body>
 
 <div class="w3-content" style="max-width:1400px">
 

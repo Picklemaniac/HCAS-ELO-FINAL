@@ -9,12 +9,12 @@
     body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     .gray {
         border-radius: 25px;
-        background-color: lightgray;
+        background-color: #F78B14;
         padding: 1%;
         margin: 2%;
     }
 </style>
-<body class="w3-light-grey">
+<body>
 
 <div class="w3-content" style="max-width:1400px">
 
