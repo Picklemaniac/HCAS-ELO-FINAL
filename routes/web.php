@@ -44,3 +44,7 @@ Route::get('/AdminDashboard', function () {
 Route::get('/AuteurDashboard', function () {
     return view('author.AuthorDashboard');
 })->middleware('auth');
+
+Route::get('/PopupKeuze', function () {
+    return view('popup');
+})->middleware('auth');
