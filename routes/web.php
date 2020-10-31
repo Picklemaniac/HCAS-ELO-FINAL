@@ -32,3 +32,7 @@ Route::get('/NieuweOefening', function () {
 Route::get('/trainerDashboard', function () {
     return view('TrainerDashboard');
 })->middleware('auth');
+
+Route::get('/detailsTrainingen', function () {
+    return view('DetailsTraining');
+})->middleware('auth');

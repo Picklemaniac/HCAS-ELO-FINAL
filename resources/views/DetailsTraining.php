@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
-<title>Details Oefeningen</title>
+<title>Details Training</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -18,7 +18,7 @@
 <div class="w3-content" style="max-width:1400px">
 
     <header class="w3-container w3-center w3-padding-32">
-        <h1><b>HCAS Details Oefeningen</b></h1>
+        <h1><b>HCAS Details Trainingen</b></h1>
     </header>
 
     <div class="w3-row">
@@ -26,7 +26,7 @@
         <div class="w3-col l8 s12">
             <div class="w3-card-4 w3-margin w3-white">
                 <div class="w3-container">
-                    <h3><b>Lopen met de bal met afronden</b></h3>
+                    <h3><b>Training Conditie met Oefeningen</b></h3>
                     <h5>Door: [Auteur]</h5>
                     <iframe width="100%" height="250px"
                             src="https://www.youtube.com/embed/n_yzZijLt4E">
