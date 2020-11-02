@@ -51,6 +51,7 @@
                     <h4><a href="/detailsOefeningen">Scoren uit de draai</a></h4>
                     <h6>Fysiek -> Snelheid</h6>
                 </div>
+
                 <hr>
             </div>
         </div>

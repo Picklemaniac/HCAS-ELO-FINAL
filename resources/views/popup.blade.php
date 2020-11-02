@@ -40,6 +40,7 @@
         background-color: #F2F2F2;
         padding: 20px;
         margin: 50px;
+        text-align: center;
 
         /* Shaduw en ronde borders */
         -moz-border-radius: 2px;
@@ -90,7 +91,6 @@
         <br>
         <div><a href="AuteurDashboard">Oefeningen</a></div>
     </div>
-</div>
 </div>
 </body>
 </html>
