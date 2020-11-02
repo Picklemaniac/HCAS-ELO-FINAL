@@ -9,7 +9,7 @@
         body, html {
             height: 100%;
             background-repeat: no-repeat;
-            background-image: linear-gradient(#ef6c00, #ffa726);
+            background-color: #F78B14;
         }
 
         .card-container.card {
