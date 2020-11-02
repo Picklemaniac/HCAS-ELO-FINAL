@@ -48,3 +48,7 @@ Route::get('/AuteurDashboard', function () {
 Route::get('/PopupKeuze', function () {
     return view('popup');
 })->middleware('auth');
+
+Route::get('/Register', function () {
+    return view('auth.register');
+})->middleware('auth');

@@ -157,43 +157,43 @@
 <div class="container">
     <div class="card card-container">
         <div class="col-md-8">
-                <div class="card-header input">{{ __('HCAS Inloggen') }}</div>
+            <div class="card-header input">{{ __('HCAS Inloggen') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+            <div class="card-body">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
 
-                        <div class="form-group row">
-                            <div class="col-md-6 input">
-                                <input placeholder="Gebruikersnaam" id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autofocus>
+                    <div class="form-group row">
+                        <div class="col-md-6 input">
+                            <input placeholder="Gebruikersnaam" id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autofocus>
 
-                                @error('username')
-                                <span class="invalid-feedback" role="alert">
+                            @error('username')
+                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-                            </div>
+                            @enderror
                         </div>
+                    </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 input">
-                                <input id="password" placeholder="Wachtwoord" type="password" class="form-control  @error('password') is-invalid @enderror" name="password" required>
+                    <div class="form-group row">
+                        <div class="col-md-6 input">
+                            <input id="password" placeholder="Wachtwoord" type="password" class="form-control  @error('password') is-invalid @enderror" name="password" required>
 
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-                            </div>
+                            @enderror
                         </div>
+                    </div>
 
-                        <div class="col-md-8 offset-md-4 center">
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('Login') }}
-                            </button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="col-md-8 offset-md-4 center">
+                        <button type="submit" class="btn btn-primary">
+                            {{ __('Login') }}
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

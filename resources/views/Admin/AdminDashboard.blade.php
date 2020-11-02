@@ -21,6 +21,40 @@
         <h1><b>Admin Paneel</b></h1>
     </header>
 
+    <div class="w3-row">
+
+        <div class="w3-col l8 s12">
+            <div class="w3-card-4 w3-margin w3-white">
+                <div class="w3-container">
+                    <h3><b>Bestaande Accounts</b></h3>
+                </div>
+
+                <div class="w3-container">
+                    <p>Jordy Gerrits</p>
+                    <p>Bas Lemmons</p>
+                    <p>Pietje Puk</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-col l4">
+            <div class="w3-card w3-margin w3-margin-top">
+                <div class="w3-container w3-white">
+                    <h4><a href="//noggeenroutenaarregisterpagina">Nieuw Account Registreren</a></h4>
+                </div>
+            </div>
+            <div class="w3-card w3-margin w3-margin-top">
+                <div class="w3-container w3-white">
+                    <h4><a href="AuteurDashboard">Oefening Aanmaken</a></h4>
+                </div>
+            </div>
+            <div class="w3-card w3-margin w3-margin-top">
+                <div class="w3-container w3-white">
+                    <h4><a href="trainerDashboard">Training Maken</a></h4>
+                </div>
+            </div>
+        </div>
+    </div><br>
 </div>
 
 </body>
