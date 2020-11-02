@@ -96,10 +96,14 @@
                 <h4>Kies Domein</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                 <h6>lorum ipsum</h6>
-
             </div>
             <div class="columndiv">
                 <h4>Selecteer Oefening</h4>
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                <h6>lorum ipsum</h6>
+            </div>
+            <div class="columndiv2">
+                <h4>Planning</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                 <h6>lorum ipsum</h6>
             </div>
@@ -108,13 +112,7 @@
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                 <h6>lorum ipsum</h6>
             </div>
-            <div class="columndiv2">
-                <h4>Selecteer Oefening</h4>
-                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                <h6>lorum ipsum</h6>
-            </div>
         </div>
     </div>
-</div>
 </body>
 </html>
