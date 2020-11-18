@@ -11,3 +11,4 @@ class oefening extends Model
     protected $primaryKey = 'OefeningNummer';
     use HasFactory;
 }
+

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\oefening;
 use Illuminate\Http\Request;
 
 class oefeningcontroller extends Controller
@@ -14,6 +15,13 @@ class oefeningcontroller extends Controller
     public function index()
     {
         //
+    }
+
+    public function ShowOefening($id)
+    {
+        $OefeningID = $id;
+        $oefening = oefening::where('OefeningNummer', $OefeningID)->first();
+        return view('DetailsOefeningen', array('oefening'=>$oefening));
     }
 
     /**

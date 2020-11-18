@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/userDashboard', [trainingcontroller::class, 'index'])->middleware('auth');
 
+Route::get('/DetailsOefeningen{id}', [\App\Http\Controllers\oefeningcontroller::class, 'ShowOefening']);
+
 Route::get('/detailsOefeningen', function () {
     return view('DetailsOefeningen');
 })->middleware('auth');
