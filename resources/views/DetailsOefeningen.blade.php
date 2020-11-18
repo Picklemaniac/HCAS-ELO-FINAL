@@ -20,31 +20,37 @@
     <header class="w3-container w3-center w3-padding-32">
         <h1><b>HCAS Details Oefeningen</b></h1>
     </header>
-
     <div class="w3-row">
 
         <div class="w3-col l8 s12">
             <div class="w3-card-4 w3-margin w3-white">
                 <div class="w3-container">
                     <h3><b>Lopen met de bal met afronden</b></h3>
-                    <h5>Door: [Auteur]</h5>
+                    <h5>Door: {{$oefening->Auteur}}</h5>
                     <iframe width="100%" height="250px"
-                            src="https://www.youtube.com/embed/n_yzZijLt4E">
+                            src="{{$oefening->VideoLink}}">
                     </iframe>
                 </div>
 
                 <div class="w3-container">
-                    <h4>Details</h4>
-                    <p>Traininsonderdeel: [Data]</p>
-                    <p>Spelfase: [Data]</p>
-                    <p>werkvorm: [Data]</p>
-                    <p>Duur: [Data]</p>
-                    <p>Organisatie: [Data]</p>
-                    <p>Organisatie: [Data]</p>
-                    <p>Hulpmiddelen: [Data]</p>
-                    <p>Aandachtspunten: [Data]</p>
-                    <p>Veel voorkomende fouten: [Data]</p>
-                    <p>Makkelijker maken: [Data]</p>
+                        <h4>Details</h4>
+                        <p>Doelgroep: {{$oefening->Doelgroep}}</p>
+                        <p>Domein: {{$oefening->DomeinNummer}}</p>
+                        <p>Sector: {{$oefening->SectorNummer}}</p>
+                        <p>Subsector: {{$oefening->SubsectorNummer}}</p>
+                        <p>Leerfase:  {{$oefening->Leerfase}}</p>
+                        <p>Trainingsonderdeel:  {{$oefening->Trainingonderdeel}}</p>
+                        <p>Spelfase: {{$oefening->Spelfase}}</p>
+                        <p>Werkvorm: {{$oefening->Werkvorm}}</p>
+                        <p>Moeilijkheidsgraad: {{$oefening->Moeilijkheidsgraad}}</p>
+                        <p>doel: {{$oefening->Doel}}</p>
+                        <p>Tijdsduur: {{$oefening->Tijd}}</p>
+                        <p>Organisatie: {{$oefening->Organisatie}}</p>
+                        <p>Veel voorkomende fouten: {{$oefening->VoorkomendeFouten}}</p>
+                        <p>Makkelijker maken: {{$oefening->MakkelijkerMaken}}</p>
+                        <p>Moeilijker maken:  {{$oefening->MoeilijkerMaken}}</p>
+                        <p>Hulpmiddelen: {{$oefening->Hulpmiddelen}}</p>
+                        <p>Tips: {{$oefening->Tips}}</p>
                 </div>
             </div>
         </div>

@@ -26,7 +26,7 @@
         <div class="w3-col l8 s12">
             <div class="w3-card-4 w3-margin w3-white">
                 <div class="w3-container">
-                    <h3><b>Training Conditie met Oefeningen</b></h3>
+                    <h3><b>Training [Titel]</b></h3>
                     <h5>Door: [Auteur]</h5>
                     <iframe width="100%" height="250px"
                             src="https://www.youtube.com/embed/n_yzZijLt4E">
@@ -35,14 +35,14 @@
 
                 <div class="w3-container">
                     <h4>Details</h4>
-                    <p>Traininsonderdeel: [Data]</p>
-                    <p>Spelfase: [Data]</p>
+                    <p>Doelgroep: [Data]</p>
+                    <p>Domein: [Data]</p>
+                    <p>Sector: [Data]</p>
+                    <p>Subsector: [Data]</p>
+                    <p>leerfase: [Data]</p>
+                    <p>trainingsonderdeel: [Data]</p>
+                    <p>spelfase: [Data]</p>
                     <p>werkvorm: [Data]</p>
-                    <p>Duur: [Data]</p>
-                    <p>Organisatie: [Data]</p>
-                    <p>Organisatie: [Data]</p>
-                    <p>Hulpmiddelen: [Data]</p>
-                    <p>Aandachtspunten: [Data]</p>
                     <p>Veel voorkomende fouten: [Data]</p>
                     <p>Makkelijker maken: [Data]</p>
                 </div>

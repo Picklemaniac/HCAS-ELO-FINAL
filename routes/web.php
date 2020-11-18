@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use \App\Http\Controllers\trainingcontroller;
+use \App\Http\Controllers\oefeningcontroller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,11 +22,8 @@ Route::get('/', function () {
 
 Route::get('/userDashboard', [trainingcontroller::class, 'index'])->middleware('auth');
 
-Route::get('/DetailsOefeningen{id}', [\App\Http\Controllers\oefeningcontroller::class, 'ShowOefening']);
+Route::get('/detailsOefeningen{id}', [oefeningcontroller::class, 'show'])->middleware('auth');
 
-Route::get('/detailsOefeningen', function () {
-    return view('DetailsOefeningen');
-})->middleware('auth');
 
 Route::get('/NieuweOefening', function () {
     return view('author.NieuweOefening');

@@ -39,7 +39,7 @@
 
                     @foreach ($t->oefeningen as $o)
                     <div class="w3-container, gray">
-                        <h4><a href="/detailsOefeningen">{{$o->Titel}}</a></h4>
+                        <h4><a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a></h4>
                     </div>
                     @endforeach
                     <hr>
@@ -60,8 +60,6 @@
                     <h4> Groep:
                        <select>
                            <option>H1</option>
-                           <option>D2</option>
-                           <option>MA1</option>
                        </select>
                     </h4>
                 </div>
