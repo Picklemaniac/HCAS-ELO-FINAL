@@ -30,6 +30,15 @@
     <div class="w3-row">
         <div class="w3-col l8 s12">
             <div class="w3-card-4 w3-margin w3-white">
+
+                @foreach ($trainingen as $t)
+                <div class="w3-container">
+                    <h3><b>{{ $t->TrainingNaam }}</b></h3>
+                    <h5>{{ $t->created_at->toDateString() }}</h5>
+                </div>
+                    <hr>
+                @endforeach
+
                 <div class="w3-container">
                     <h3><b>Training 12</b></h3>
                     <h5>10-22-2020</h5>

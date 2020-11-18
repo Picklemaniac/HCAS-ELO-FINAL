@@ -2,18 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\training;
 use Illuminate\Http\Request;
 
 class trainingcontroller extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $trainingen = training::all();
+        return view('userDashboard', ['trainingen' => $trainingen]);
     }
 
     /**

@@ -85,6 +85,7 @@
 </style>
 <body>
 <div class="fulldiv">
+
     <div class="contentdiv">
         <h1>Welkom [Gebruiker]</h1>
     </div>
