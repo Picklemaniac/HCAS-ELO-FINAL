@@ -10,5 +10,9 @@ class oefening extends Model
     protected $table = 'oefeningen';
     protected $primaryKey = 'OefeningNummer';
     use HasFactory;
-}
 
+    public function where()
+    {
+
+    }
+}
