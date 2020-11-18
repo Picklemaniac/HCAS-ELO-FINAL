@@ -10,4 +10,9 @@ class training extends Model
     protected $table = 'trainingen';
     protected $primaryKey = 'TrainingNummer';
     use HasFactory;
+
+    public function oefeningen()
+    {
+        return $this->hasMany('App\Models\oefening', 'TrainingNummer');
+    }
 }

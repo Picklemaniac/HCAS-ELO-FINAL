@@ -36,31 +36,14 @@
                     <h3><b>{{ $t->TrainingNaam }}</b></h3>
                     <h5>{{ $t->created_at->toDateString() }}</h5>
                 </div>
+
+                    @foreach ($t->oefeningen as $o)
+                    <div class="w3-container, gray">
+                        <h4><a href="/detailsOefeningen">{{$o->Titel}}</a></h4>
+                    </div>
+                    @endforeach
                     <hr>
                 @endforeach
-
-                <div class="w3-container">
-                    <h3><b>Training 12</b></h3>
-                    <h5>10-22-2020</h5>
-                </div>
-
-                <div class="w3-container, gray">
-                    <h4><a href="/detailsOefeningen">Lopen met de bal met afronden</a></h4>
-                    <h6>Fysiek -> Snelheid</h6>
-                </div>
-                <div class="w3-container, gray">
-                    <h4><a href="/detailsOefeningen">High impact interval training</a></h4>
-                    <h6>Fysiek -> Snelheid</h6>
-                </div>
-                <div class="w3-container, gray">
-                    <h4><a href="/detailsOefeningen">ISRT interval shuttle training</a></h4>
-                    <h6>Fysiek -> Snelheid</h6>
-                </div>
-                <div class="w3-container, gray">
-                    <h4><a href="/detailsOefeningen">Scoren uit de draai</a></h4>
-                    <h6>Fysiek -> Snelheid</h6>
-                </div>
-
                 <hr>
             </div>
         </div>
