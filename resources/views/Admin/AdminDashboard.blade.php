@@ -30,9 +30,9 @@
                 </div>
 
                 <div class="w3-container">
-                    <p>Jordy Gerrits</p>
-                    <p>Bas Lemmons</p>
-                    <p>Pietje Puk</p>
+                    @foreach ($users as $u)
+                        <p>{{$u->achternaam}} {{$u->tussenvoegsel}} {{$u->voornaam}}</p>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -45,12 +45,12 @@
             </div>
             <div class="w3-card w3-margin w3-margin-top">
                 <div class="w3-container w3-white">
-                    <h4><a href="AuteurDashboard">Oefening Aanmaken</a></h4>
+                    <h4><a href="AuteurDashboard">Auteur Omgeving</a></h4>
                 </div>
             </div>
             <div class="w3-card w3-margin w3-margin-top">
                 <div class="w3-container w3-white">
-                    <h4><a href="trainerDashboard">Training Maken</a></h4>
+                    <h4><a href="trainerDashboard">Training Omgeving</a></h4>
                 </div>
             </div>
         </div>

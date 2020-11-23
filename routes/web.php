@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use \App\Http\Controllers\trainingcontroller;
 use \App\Http\Controllers\oefeningcontroller;
+use \App\Http\Controllers\admincontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,16 +32,14 @@ Route::get('/NieuweOefening', function () {
 Route::post('/NieuweOefening', [oefeningcontroller::class, 'create'])->middleware('auth');
 
 Route::get('/trainerDashboard', function () {
-    return view('TrainerDashboard');
+    return view('trainer.TrainerDashboard');
 })->middleware('auth');
 
 Route::get('/detailsTrainingen', function () {
     return view('DetailsTraining');
 })->middleware('auth');
 
-Route::get('/AdminDashboard', function () {
-    return view('admin.AdminDashboard');
-})->middleware('auth');
+Route::get('/AdminDashboard', [admincontroller::class, 'index'])->middleware('auth');
 
 Route::get('/AuteurDashboard', [oefeningcontroller::class, 'showAllToAuthor'])->middleware('auth')->name('AuteurDashboard');
 

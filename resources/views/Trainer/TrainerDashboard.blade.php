@@ -87,7 +87,7 @@
 <div class="fulldiv">
 
     <div class="contentdiv">
-        <h1>Welkom [Gebruiker]</h1>
+        <h1>Welkom {{ucfirst(Auth::user()->voornaam)}} </h1>
     </div>
     <div class="contentdiv">
         <h2>[Agenda]</h2>
@@ -97,6 +97,7 @@
                 <h4>Kies Domein</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                 <h6>lorum ipsum</h6>
+
             </div>
             <div class="columndiv">
                 <h4>Selecteer Oefening</h4>
