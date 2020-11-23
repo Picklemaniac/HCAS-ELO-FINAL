@@ -86,10 +86,10 @@
 <body>
 <div>
     <div class="contentdiv">
-        <h2>Trainingen of Oefeningen?</h2>
-        <div><a href="trainerDashboard">Trainingen</a></div>
+        <h2>Welke omgeving?</h2>
+        <div><a href="trainerDashboard">Trainingen omgeving</a></div>
         <br>
-        <div><a href="AuteurDashboard">Oefeningen</a></div>
+        <div><a href="AuteurDashboard">Auteur omgeving</a></div>
     </div>
 </div>
 </body>
