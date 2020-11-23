@@ -27,9 +27,16 @@
                 <div class="w3-container">
                     <h3><b>Lopen met de bal met afronden</b></h3>
                     <h5>Door: {{$oefening->Auteur}}</h5>
+
+                    @if($oefening->VideoLink != "")
                     <iframe width="100%" height="250px"
                             src="{{$oefening->VideoLink}}">
                     </iframe>
+                    @endif
+
+                    @if($oefening->ImageLink != "")
+                        <img src="{{$oefening->ImageLink}}">
+                    @endif
                 </div>
 
                 <div class="w3-container">
