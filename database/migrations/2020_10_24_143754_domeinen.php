@@ -13,11 +13,11 @@ class Domeinen extends Migration
      */
     public function up()
     {
-        Schema::create('domeinen', function (Blueprint $table) {
-            $table->id('DomeinNummer');
-            $table->string('DomeinNaam');
-            $table->timestamps();
-        });
+//        Schema::create('domeinen', function (Blueprint $table) {
+//            $table->id('DomeinNummer');
+//            $table->string('DomeinNaam');
+//            $table->timestamps();
+//        });
     }
 
     /**

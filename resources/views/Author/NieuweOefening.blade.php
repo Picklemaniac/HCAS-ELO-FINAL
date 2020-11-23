@@ -45,28 +45,31 @@
 <body>
 <div class="fulldiv">
 <h1 class="center">Oefening toevoegen:</h1>
-    <form action="/" method="post" >
+    <form action="/NieuweOefening" method="post">
+        @csrf
         <div class="contentdiv center">
-                Naam oefening: <input type="text"><p>
-                Doelgroep: <select><option>Doelgroep 1</option><option>Doelgroep 2</option></select> <p>
-                Domein: <select><option>Domein 1</option><option>Domein 2</option></select> <p>
-                Sector: <select><option>Sector 1</option><option>Sector 2</option></select> <p>
-                Subsector: <select><option>Subsector 1</option><option>Subsector 2</option></select> <p>
-                Leerfase: <select><option>Aanleren</option><option>Oefenen</option><option>Testen</option></select> <p>
-                Trainingsonderdeeld: <select><option>Warming up</option><option>Kern 1</option><option>Kern 2</option><option>Spel</option><option>Afsluiting</option></select> <p>
-                Spelfase: <select><option>BB Uitverdedigen</option><option>BB Opbouwen</option><option>BB Aanvallen</option><option>BB Scoren</option><option>NBB Storen</option><option>NBB Vertragen</option><option>NBB Voorkomen</option><option>NBB Verijdelen</option></select> <p>
-                Werkvorm: <select><option>oefenvorm</option><option>spelvorm</option><option>wedstrijdvorm</option></select><p>
-                Moeilijkheidsgraad: <select><option>Makkelijk</option><option>Middelmatig</option><option>Moeilijk</option></select> <p>
-                Doel:  <br> <textarea id="" cols="50" rows="5"></textarea> <p>
-                Tijdsduur (Min):   <input type="number" min="1" max="99"><p>
-                Afbeelding link: <input type="text"> <p>
-                Video link: <input type="text"> <p>
-                Organisatie:  <br> <textarea id="" cols="50" rows="5"></textarea> <p>
-                Veel voorkomende fouten:  <br> <textarea id="" cols="50" rows="5"></textarea> <p>
-                Makkelijker maken:  <br> <textarea id="" cols="50" rows="5"></textarea> <p>
-                Moeilijker maken:  <br> <textarea id="" cols="50" rows="5"></textarea> <p>
-                Hulpmiddelen:  <br> <textarea id="" cols="50" rows="5"></textarea> <p>
-                Tips:  <br> <textarea id="" cols="50" rows="5"></textarea>
+                Naam oefening: <input type="text" name="titel" required> * Verplicht<p>
+                Doelgroep: <select name="doelgroep" required><option>Jongste Jeugd</option><option>Onderbouw</option><option>Bovenbouw / Senioren</option></select> * Verplicht<p>
+                Domein: <select name="domein" required><option>Fysiek</option><option>Techniek</option><option>Tactiek</option><option>Mentaal</option></select> * Verplicht<p>
+                Sector: <select name="sector" required><option>Sector 1</option><option>Sector 2</option></select> * Verplicht<p>
+                Subsector: <select name="subsector" ><option>Subsector 1</option><option>Subsector 2</option></select> <p>
+                Leerfase: <select name="leerfase" required><option>Aanleren</option><option>Oefenen</option><option>Testen</option></select> * Verplicht<p>
+                Trainingsonderdeeld: <select name="trainingonderdeel"><option>Warming up</option><option>Kern 1</option><option>Kern 2</option><option>Spel</option><option>Afsluiting</option></select> <p>
+                Spelfase: <select name="spelfase"><option>BB Uitverdedigen</option><option>BB Opbouwen</option><option>BB Aanvallen</option><option>BB Scoren</option><option>NBB Storen</option><option>NBB Vertragen</option><option>NBB Voorkomen</option><option>NBB Verijdelen</option></select> <p>
+                Werkvorm: <select name="werkvorm"><option>oefenvorm</option><option>spelvorm</option><option>wedstrijdvorm</option></select><p>
+                Moeilijkheidsgraad: <select name="moeilijkheidsgraad" required><option>Makkelijk</option><option>Middelmatig</option><option>Moeilijk</option></select> * Verplicht<p>
+                Doel:  <br> <textarea id="" cols="50" rows="5" name="doel"></textarea> <p>
+                Tijdsduur (Min):   <input type="number" min="1" max="99" name="tijd" required> * Verplicht<p>
+                Afbeelding link: <input type="text" name="imagelink"> <p>
+                Video link: <input type="text" name="videolink"> <p>
+                Organisatie:  <br> <textarea id="" cols="50" rows="5" name="organisatie"></textarea> <p>
+                Veel voorkomende fouten:  <br> <textarea id="" cols="50" rows="5" name="voorkomendefouten"></textarea> <p>
+                Aandachtspunten:  <br> <textarea id="" cols="50" rows="5" name="aandachtspunten"></textarea> <p>
+                Makkelijker maken:  <br> <textarea id="" cols="50" rows="5" name="makkelijkermaken"></textarea> <p>
+                Moeilijker maken:  <br> <textarea id="" cols="50" rows="5" name="moeilijkermaken"></textarea> <p>
+                Hulpmiddelen:  <br> <textarea id="" cols="50" rows="5" name="hulpmiddelen"></textarea> <p>
+                Tips:  <br> <textarea id="" cols="50" rows="5" name="tips"></textarea>
+                <input type="hidden" name="auteur" value="{{Auth::user()->voornaam}}"> <p>
         </div>
             <div class="contentdiv center">
         <input type="submit" value="Opslaan" name="" id="">

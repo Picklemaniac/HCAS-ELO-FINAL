@@ -30,10 +30,9 @@
                 </div>
 
                 <div class="w3-container">
-                    <p>Oefening #1</p>
-                    <p>Oefening #2</p>
-                    <p>Oefening #3</p>
-                    <p>Oefening #4</p>
+                    @foreach ($oefeningen as $o)
+                            <p><a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a>  </p>
+                    @endforeach
                 </div>
             </div>
         </div>

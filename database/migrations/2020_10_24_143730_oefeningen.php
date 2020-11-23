@@ -17,9 +17,9 @@ class Oefeningen extends Migration
             $table->id('OefeningNummer');
             $table->integer('TrainingNummer');
             $table->string('Titel');
-            $table->integer('DomeinNummer');
-            $table->integer('SectorNummer');
-            $table->integer('SubsectorNummer');
+            $table->string('Domein');
+            $table->string('Sector')->nullable();
+            $table->string('Subsector')->nullable();
             $table->string('Trainingonderdeel');
             $table->string('Auteur');
             $table->string('Tijd');

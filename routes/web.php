@@ -24,10 +24,11 @@ Route::get('/userDashboard', [trainingcontroller::class, 'index'])->middleware('
 
 Route::get('/detailsOefeningen{id}', [oefeningcontroller::class, 'show'])->middleware('auth');
 
-
 Route::get('/NieuweOefening', function () {
     return view('author.NieuweOefening');
 })->middleware('auth');
+
+Route::post('/NieuweOefening', [oefeningcontroller::class, 'create'])->middleware('auth');
 
 Route::get('/trainerDashboard', function () {
     return view('TrainerDashboard');
@@ -41,9 +42,7 @@ Route::get('/AdminDashboard', function () {
     return view('admin.AdminDashboard');
 })->middleware('auth');
 
-Route::get('/AuteurDashboard', function () {
-    return view('author.AuthorDashboard');
-})->middleware('auth');
+Route::get('/AuteurDashboard', [oefeningcontroller::class, 'showAllToAuthor'])->middleware('auth')->name('AuteurDashboard');
 
 Route::get('/PopupKeuze', function () {
     return view('popup');

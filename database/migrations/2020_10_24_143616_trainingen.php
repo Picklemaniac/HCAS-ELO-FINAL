@@ -15,7 +15,7 @@ class Trainingen extends Migration
     {
         Schema::create('trainingen', function (Blueprint $table) {
             $table->id('TrainingNummer');
-            $table->integer('TeamNummer');
+            $table->string('TeamNummer');
             $table->string('TrainingNaam');
             $table->timestamps();
         });
