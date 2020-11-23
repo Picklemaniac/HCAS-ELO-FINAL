@@ -62,6 +62,20 @@
                            <option>H1</option>
                        </select>
                     </h4>
+
+
+                    @if(Auth::user()->IsTrainer == 1)
+                        <h4> <a href="/trainerDashboard">Trainer omgeving</a></h4>
+                    @endif
+
+                    @if(Auth::user()->IsAuthor == 1)
+                    <h4><a href="/AuteurDashboard">Auteur omgeving</a></h4>
+                    @endif
+
+
+                    @if(Auth::user()->IsAdmin == 1)
+                    <h4> <a href="/AdminDashboard">Admin omgeving</a></h4>
+                    @endif
                 </div>
             </div>
         </div>

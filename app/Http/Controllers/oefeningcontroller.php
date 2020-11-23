@@ -105,6 +105,7 @@ class oefeningcontroller extends Controller
 
     public function destroy($id)
     {
-        //
+        oefening::where('OefeningNummer', $id)->delete();
+        return redirect()->route('AuteurDashboard');
     }
 }

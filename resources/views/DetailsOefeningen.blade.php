@@ -29,7 +29,7 @@
                     <h5>Door: {{$oefening->Auteur}}</h5>
 
                     @if($oefening->VideoLink != "")
-                    <iframe width="100%" height="250px"
+                    <iframe width="100%" height="400px"
                             src="{{$oefening->VideoLink}}">
                     </iframe>
                     @endif

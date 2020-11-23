@@ -6,24 +6,26 @@ use \App\Http\Controllers\trainingcontroller;
 use \App\Http\Controllers\oefeningcontroller;
 use \App\Http\Controllers\admincontroller;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+/* Autorisatie & Index */
 
 Route::get('/', function () {
     return view('auth.login');
 });
 
+/*--------*/
+
+/* User Dashboard*/
+
 Route::get('/userDashboard', [trainingcontroller::class, 'index'])->middleware('auth');
 
 Route::get('/detailsOefeningen{id}', [oefeningcontroller::class, 'show'])->middleware('auth');
+
+/*--------*/
+
+
+/* Auteur Dahboard*/
+
+Route::get('/AuteurDashboard', [oefeningcontroller::class, 'showAllToAuthor'])->middleware('auth')->name('AuteurDashboard');
 
 Route::get('/NieuweOefening', function () {
     return view('author.NieuweOefening');
@@ -31,18 +33,25 @@ Route::get('/NieuweOefening', function () {
 
 Route::post('/NieuweOefening', [oefeningcontroller::class, 'create'])->middleware('auth');
 
+Route::get('/VerwijderOefening{id}', [oefeningcontroller::class, 'destroy']);
+
+/*--------*/
+
+/* Trainer Dashboard */
+
 Route::get('/trainerDashboard', function () {
     return view('trainer.TrainerDashboard');
 })->middleware('auth');
 
-Route::get('/detailsTrainingen', function () {
-    return view('DetailsTraining');
-})->middleware('auth');
-
 Route::get('/AdminDashboard', [admincontroller::class, 'index'])->middleware('auth');
 
-Route::get('/AuteurDashboard', [oefeningcontroller::class, 'showAllToAuthor'])->middleware('auth')->name('AuteurDashboard');
+/*--------*/
+
+
+/* overig */
 
 Route::get('/PopupKeuze', function () {
     return view('popup');
 })->middleware('auth');
+
+/*--------*/
