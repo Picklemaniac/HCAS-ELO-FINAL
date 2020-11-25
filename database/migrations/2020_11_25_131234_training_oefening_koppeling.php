@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Trainingen extends Migration
+class TrainingOefeningKoppeling extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class Trainingen extends Migration
      */
     public function up()
     {
-        Schema::create('trainingen', function (Blueprint $table) {
-            $table->id('TrainingNummer');
-            $table->string('TeamNummer');
-            $table->string('TrainingNaam');
-            $table->dateTime('startTijd')->nullable();
+        Schema::create('trainingen_oefeningen', function (Blueprint $table) {
+            $table->id();
+            $table->integer('trainingnummer');
+            $table->integer('oefeningnummer');
             $table->timestamps();
         });
     }

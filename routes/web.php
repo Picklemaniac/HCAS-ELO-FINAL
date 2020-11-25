@@ -31,6 +31,8 @@ Route::get('/NieuweOefening', function () {
     return view('author.NieuweOefening');
 })->middleware('auth');
 
+Route::get('/EditOefening{id}', [oefeningcontroller::class, 'edit'])->middleware('auth');
+
 Route::post('/NieuweOefening', [oefeningcontroller::class, 'create'])->middleware('auth');
 
 Route::get('/VerwijderOefening{id}', [oefeningcontroller::class, 'destroy']);

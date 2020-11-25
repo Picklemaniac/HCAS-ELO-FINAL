@@ -31,7 +31,7 @@
 
                 <div class="w3-container">
                     @foreach ($oefeningen as $o)
-                            <p><a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a> <button onclick="window.location.href='/VerwijderOefening{{$o->OefeningNummer}}'">Verwijderen</button>  </p>
+                            <p><a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a> <button onclick="window.location.href='/EditOefening{{$o->OefeningNummer}}'">Aanpassen</button> <button onclick="window.location.href='/VerwijderOefening{{$o->OefeningNummer}}'">Verwijderen</button>  </p>
                              <hr>
                     @endforeach
                 </div>

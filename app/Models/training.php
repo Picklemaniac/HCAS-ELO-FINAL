@@ -13,6 +13,6 @@ class training extends Model
 
     public function oefeningen()
     {
-        return $this->hasMany('App\Models\oefening', 'TrainingNummer');
+        return $this->belongsToMany('App\Models\oefening', 'trainingen_oefeningen', "trainingnummer", "oefeningnummer");
     }
 }

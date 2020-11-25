@@ -32,16 +32,15 @@
             <div class="w3-card-4 w3-margin w3-white">
 
                 @foreach ($trainingen as $t)
-                <div class="w3-container">
-                    <h3><b>{{ $t->TrainingNaam }}</b></h3>
-                    <h5>{{ $t->created_at->toDateString() }}</h5>
-                </div>
-
-                    @foreach ($t->oefeningen as $o)
-                    <div class="w3-container, gray">
-                        <h4><a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a></h4>
-                    </div>
-                    @endforeach
+                        <div class="w3-container">
+                            <h3><b>{{ $t->TrainingNaam }}</b></h3>
+                            <h5>{{ $t->created_at->toDateString() }}</h5>
+                        </div>
+                        @foreach($t->oefeningen as $o)
+                            <div class="w3-container, gray">
+                                <h4><a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a></h4>
+                            </div>
+                        @endforeach
                     <hr>
                 @endforeach
                 <hr>
@@ -71,7 +70,6 @@
                     @if(Auth::user()->IsAuthor == 1)
                     <h4><a href="/AuteurDashboard">Auteur omgeving</a></h4>
                     @endif
-
 
                     @if(Auth::user()->IsAdmin == 1)
                     <h4> <a href="/AdminDashboard">Admin omgeving</a></h4>

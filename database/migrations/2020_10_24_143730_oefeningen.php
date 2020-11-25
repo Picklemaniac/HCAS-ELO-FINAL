@@ -15,29 +15,28 @@ class Oefeningen extends Migration
     {
         Schema::create('oefeningen', function (Blueprint $table) {
             $table->id('OefeningNummer');
-            $table->integer('TrainingNummer');
             $table->string('Titel');
             $table->string('Domein');
-            $table->string('Sector')->nullable();
+            $table->string('Sector');
             $table->string('Subsector')->nullable();
-            $table->string('Trainingonderdeel');
+            $table->string('Trainingonderdeel')->nullable();;
             $table->string('Auteur');
             $table->string('Tijd');
             $table->string('Doelgroep');
             $table->string('Doel');
-            $table->string('Spelfase');
-            $table->string('Werkvorm');
+            $table->string('Spelfase')->nullable();;
+            $table->string('Werkvorm')->nullable();;
             $table->string('Leerfase');
-            $table->string('Organisatie');
+            $table->string('Organisatie')->nullable();
             $table->string('Moeilijkheidsgraad');
-            $table->string('MoeilijkerMaken');
-            $table->string('MakkelijkerMaken');
-            $table->string('VoorkomendeFouten');
-            $table->string('Tips');
-            $table->string('Hulpmiddelen');
-            $table->string('Aandachtspunten');
-            $table->string('ImageLink');
-            $table->string('VideoLink');
+            $table->string('MoeilijkerMaken')->nullable();
+            $table->string('MakkelijkerMaken')->nullable();
+            $table->string('VoorkomendeFouten')->nullable();
+            $table->string('Tips')->nullable();
+            $table->string('Hulpmiddelen')->nullable();
+            $table->string('Aandachtspunten')->nullable();
+            $table->string('ImageLink')->nullable();
+            $table->string('VideoLink')->nullable();
             $table->timestamps();
         });
     }

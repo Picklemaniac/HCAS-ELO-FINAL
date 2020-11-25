@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\koppeling;
 use App\Models\training;
 use Illuminate\Http\Request;
 

@@ -10,4 +10,9 @@ class oefening extends Model
     protected $table = 'oefeningen';
     protected $primaryKey = 'OefeningNummer';
     use HasFactory;
+
+    public function trainingen()
+    {
+        return $this->belongsToMany('App\Models\training', 'trainingen_oefeningen', "oefeningnummer", "trainingnummer");
+    }
 }
