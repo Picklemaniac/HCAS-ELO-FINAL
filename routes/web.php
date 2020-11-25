@@ -33,6 +33,8 @@ Route::get('/NieuweOefening', function () {
 
 Route::get('/EditOefening{id}', [oefeningcontroller::class, 'edit'])->middleware('auth');
 
+Route::post('/EditOefening{id}', [oefeningcontroller::class, 'update'])->middleware('auth');
+
 Route::post('/NieuweOefening', [oefeningcontroller::class, 'create'])->middleware('auth');
 
 Route::get('/VerwijderOefening{id}', [oefeningcontroller::class, 'destroy']);

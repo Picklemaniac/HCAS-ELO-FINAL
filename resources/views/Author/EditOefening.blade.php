@@ -45,7 +45,7 @@
 <body>
 <div class="fulldiv">
     <h1 class="center">Oefening aanpassen:</h1>
-    <form action="/EditOefening" method="put">
+    <form action="/EditOefening{{$oefening->OefeningNummer}}" method="post">
         @csrf
         <div class="contentdiv center">
                 Naam oefening: <input type="text" name="titel" value="{{$oefening->Titel}}" required> * Verplicht<p>
@@ -58,7 +58,6 @@
                 Spelfase: <select name="spelfase"><option>BB Uitverdedigen</option><option>BB Opbouwen</option><option>BB Aanvallen</option><option>BB Scoren</option><option>NBB Storen</option><option>NBB Vertragen</option><option>NBB Voorkomen</option><option>NBB Verijdelen</option></select> <p>
                 Werkvorm: <select name="werkvorm"><option>oefenvorm</option><option>spelvorm</option><option>wedstrijdvorm</option></select><p>
                 Moeilijkheidsgraad: <select name="moeilijkheidsgraad" required><option>Makkelijk</option><option>Middelmatig</option><option>Moeilijk</option></select> * Verplicht<p>
-                Doel:  <br> <textarea id="" cols="50" rows="5" name="doel">{{$oefening->Doel}}</textarea> <p>
                 Tijdsduur (Min):   <input type="number" min="1" max="99" name="tijd" required value="{{$oefening->Tijd}}"> * Verplicht<p>
                 Afbeelding link: <input type="text" name="imagelink" value="{{$oefening->ImageLink}}"> <p>
                 Video link: <input type="text" name="videolink" value="{{$oefening->VideoLink}}"> <p>

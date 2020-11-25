@@ -12,6 +12,10 @@
         background-repeat: no-repeat;
         background-color: #F78B14;
     }
+    .strong {
+        font-weight: bolder;
+        text-decoration: underline;
+    }
 </style>
 <body>
 
@@ -41,23 +45,22 @@
 
                 <div class="w3-container">
                         <h4>Details</h4>
-                        <p>Doelgroep: {{$oefening->Doelgroep}}</p>
-                        <p>Domein: {{$oefening->DomeinNummer}}</p>
-                        <p>Sector: {{$oefening->SectorNummer}}</p>
-                        <p>Subsector: {{$oefening->SubsectorNummer}}</p>
-                        <p>Leerfase:  {{$oefening->Leerfase}}</p>
-                        <p>Trainingsonderdeel:  {{$oefening->Trainingonderdeel}}</p>
-                        <p>Spelfase: {{$oefening->Spelfase}}</p>
-                        <p>Werkvorm: {{$oefening->Werkvorm}}</p>
-                        <p>Moeilijkheidsgraad: {{$oefening->Moeilijkheidsgraad}}</p>
-                        <p>doel: {{$oefening->Doel}}</p>
-                        <p>Tijdsduur: {{$oefening->Tijd}}</p>
-                        <p>Organisatie: {{$oefening->Organisatie}}</p>
-                        <p>Veel voorkomende fouten: {{$oefening->VoorkomendeFouten}}</p>
-                        <p>Makkelijker maken: {{$oefening->MakkelijkerMaken}}</p>
-                        <p>Moeilijker maken:  {{$oefening->MoeilijkerMaken}}</p>
-                        <p>Hulpmiddelen: {{$oefening->Hulpmiddelen}}</p>
-                        <p>Tips: {{$oefening->Tips}}</p>
+                        @if($oefening->Doelgroep != "")<p><span class="strong">Doelgroep:</span> {{$oefening->Doelgroep}}</p>@endif
+                        @if($oefening->DomeinNummer != "")<p><span class="strong">Domein:</span> {{$oefening->DomeinNummer}}</p>@endif
+                        @if($oefening->SectorNummer != "") <p><span class="strong">Sector:</span> {{$oefening->SectorNummer}}</p>@endif
+                        @if($oefening->SubsectorNummer != "") <p><span class="strong">Subsector:</span> {{$oefening->SubsectorNummer}}</p>@endif
+                        @if($oefening->Leerfase != "")<p><span class="strong">Leerfase:</span>  {{$oefening->Leerfase}}</p>@endif
+                        @if($oefening->Trainingonderdeel != "")<p><span class="strong">Trainingsonderdeel:</span>  {{$oefening->Trainingonderdeel}}</p>@endif
+                        @if($oefening->Spelfase != "")<p><span class="strong">Spelfase:</span> {{$oefening->Spelfase}}</p>@endif
+                        @if($oefening->Werkvorm != "")<p><span class="strong">Werkvorm:</span> {{$oefening->Werkvorm}}</p>@endif
+                        @if($oefening->Moeilijkheidsgraad != "")<p><span class="strong">Moeilijkheidsgraad:</span> {{$oefening->Moeilijkheidsgraad}}</p>@endif
+                        @if($oefening->Tijd != "")<p><span class="strong">Tijdsduur:</span> {{$oefening->Tijd}}</p>@endif
+                        @if($oefening->Organisatie != "") <p><span class="strong">Organisatie:</span> {{$oefening->Organisatie}}</p>@endif
+                        @if($oefening->VoorkomendeFouten != "")<p><span class="strong">Veel voorkomende fouten:</span> {{$oefening->VoorkomendeFouten}}</p>@endif
+                        @if($oefening->MakkelijkerMaken != "")<p><span class="strong">Makkelijker maken:</span> {{$oefening->MakkelijkerMaken}}</p>@endif
+                        @if($oefening->MoeilijkerMaken != "")<p><span class="strong">Moeilijker maken:</span>  {{$oefening->MoeilijkerMaken}}</p>@endif
+                        @if($oefening->Hulpmiddelen != "")<p><span class="strong">Hulpmiddelen:</span> {{$oefening->Hulpmiddelen}}</p>@endif
+                        @if($oefening->Tips != "") <p><span class="strong">Tips:</span> {{$oefening->Tips}}</p>@endif
                 </div>
             </div>
         </div>

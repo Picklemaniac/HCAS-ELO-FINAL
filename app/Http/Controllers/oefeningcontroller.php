@@ -36,7 +36,6 @@ class oefeningcontroller extends Controller
         $oefeningen->Auteur	= $request->auteur;
         $oefeningen->Tijd = $request->tijd;
         $oefeningen->Doelgroep = $request->doelgroep;
-        $oefeningen->Doel = $request->doel;
         $oefeningen->Spelfase = $request->spelfase;
         $oefeningen->Werkvorm = $request->werkvorm;
         $oefeningen->Leerfase = $request->leerfase;
@@ -93,24 +92,10 @@ class oefeningcontroller extends Controller
             'titel' => 'required|string|',
             'domein' => 'required|string|',
             'sector' => 'required|string|',
-            'subsector' => '|string|',
-            'trainingonderdeel' => '|string|',
             'auteur' => 'required|string|',
             'tijd' => 'required|integer|',
             'doelgroep' => 'required|string|',
-            'doel' => 'string|',
-            'spelfase' => 'string|',
-            'werkvorm' => 'string|',
             'leerfase' => 'required|string|',
-            'organisatie' => 'string|',
-            'moeilijkheidsgraad' => 'string|',
-            'moeilijkermaken' => 'string|',
-            'voorkomendefouten' => 'string|',
-            'tips' => 'string|',
-            'hulpmiddelen' => 'string|',
-            'aandachtspunten' => 'string|',
-            'imagelink' => 'string|',
-            'videolink' => 'string|',
         ]);
 
         $oefening->Titel = $request->titel;
@@ -121,7 +106,6 @@ class oefeningcontroller extends Controller
         $oefening->Auteur	= $request->auteur;
         $oefening->Tijd = $request->tijd;
         $oefening->Doelgroep = $request->doelgroep;
-        $oefening->Doel = $request->doel;
         $oefening->Spelfase = $request->spelfase;
         $oefening->Werkvorm = $request->werkvorm;
         $oefening->Leerfase = $request->leerfase;
