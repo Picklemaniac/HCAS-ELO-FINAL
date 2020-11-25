@@ -27,7 +27,6 @@
         /* just in case there no content*/
         padding: 20px;
         margin: 50px;
-        height: 90%;
 
         /* Shaduw en ronde borders */
         -moz-border-radius: 2px;
@@ -51,8 +50,7 @@
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     }
     .columndiv {
-        float: left;
-        width: 24%;
+        width: 23%;
         padding: 20px;
         margin: 5px;
         background-color: #F2F2F2;
@@ -66,7 +64,29 @@
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     }
     .columndiv2 {
-        float: right;
+        width: 23%;
+        padding: 20px;
+        margin: 5px;
+        background-color: #F2F2F2;
+        alignment: left;
+        /* Shaduw en ronde borders */
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .flex-container {
+        display: flex;
+        background-color: #F2F2F2;
+        padding: 20px;
+        margin: 50px;
+        flex-wrap: wrap;
+    }
+
+    .flex-container > div {
         width: 24%;
         padding: 20px;
         margin: 5px;
@@ -81,6 +101,20 @@
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     }
 
+    @media screen and (max-width: 992px) {
+        .columndiv {
+            flex: 50%;
+        }
+    }
+
+    /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+        .flex-container {
+            flex-direction: column;
+        }
+    }
+
+
 
 </style>
 <body>
@@ -92,24 +126,23 @@
     <div class="contentdiv">
         <h2>[Agenda]</h2>
     </div>
-        <div>
+        <div class="flex-container">
             <div class="columndiv">
                 <h4>Kies Domein</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                 <h6>lorum ipsum</h6>
-
             </div>
             <div class="columndiv">
                 <h4>Selecteer Oefening</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                 <h6>lorum ipsum</h6>
             </div>
-            <div class="columndiv2">
+            <div class="columndiv">
                 <h4>Planning</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                 <h6>lorum ipsum</h6>
             </div>
-            <div class="columndiv2">
+            <div class="columndiv">
                 <h4>Geselecteerde Oefeningen</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                 <h6>lorum ipsum</h6>
