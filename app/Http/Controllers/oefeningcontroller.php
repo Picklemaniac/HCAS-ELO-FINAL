@@ -132,4 +132,15 @@ class oefeningcontroller extends Controller
         return redirect()->route('AuteurDashboard');
     }
 
+    public function showAllToTrainer() {
+
+        if (request()->has('domein')) {
+            $oefeningen = oefening::where('Domein', request('domein'))->get();
+        }
+        else {
+            $oefeningen = oefening::all();
+        }
+
+        return view('Trainer\TrainerDashboard', ['oefeningen' => $oefeningen]);
+    }
 }

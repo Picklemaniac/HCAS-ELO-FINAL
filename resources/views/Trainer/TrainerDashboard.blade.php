@@ -114,33 +114,83 @@
         }
     }
 
+    .nicebtn {
+        background-color: orange; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 14px;
+        width: 100%;
+        text-decoration: none;
+    }
 
+    .nicebtn:hover {
+        background-color: #fff199;
+        color: white;
+    }
 
+    .oefening {
+        background-color: #ffc04c;
+        color: white;
+        border-radius: 25px;
+        border: 2px solid #ffc04c;
+        text-align: center;
+    }
 </style>
+
+<script>
+
+let domein = "";
+
+
+
+</script>
+
 <body>
 <div class="fulldiv">
 
     <div class="contentdiv">
         <h1>Welkom {{ucfirst(Auth::user()->voornaam)}} </h1>
     </div>
-    <div class="contentdiv">
-        <h2>[Agenda]</h2>
-    </div>
+
         <div class="flex-container">
             <div class="columndiv">
                 <h4>Kies Domein</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                <h6>lorum ipsum</h6>
+                <div id="fysiek">
+                   <p><a href="/trainerDashboard?domein=Fysiek" class="nicebtn">1 Fysiek</a></p>
+                </div>
+                <div id="techniek">
+                   <p><a href="/trainerDashboard?domein=Techniek" class="nicebtn" onclick="">2. Techniek</a></p>
+                </div>
+                <div id="tactiek">
+                   <p><a href="/trainerDashboard?domein=Tactiek" class="nicebtn">3. Tactiek</a></p>
+                </div>
             </div>
             <div class="columndiv">
                 <h4>Selecteer Oefening</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                <h6>lorum ipsum</h6>
+
+                @foreach($oefeningen as $o)
+                    <div class="oefening">
+                        <span>{{$o->Titel}}</span> <br>
+                        <span>{{$o->Tijd}} minuten</span> <br>
+                    </div>
+                @endforeach
+
             </div>
             <div class="columndiv">
                 <h4>Planning</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                <h6>lorum ipsum</h6>
+                <form action="/nieuweTraining">
+                    <p><span>Training Naam</span></p>
+                    <input type="text"/>
+                    <p><span>Planning:</span></p>
+                    <input type="date" id="start" name="trip-start">
+                    <p><button class="nicebtn">Training Aanmaken</button></p>
+                </form>
             </div>
             <div class="columndiv">
                 <h4>Geselecteerde Oefeningen</h4>
@@ -148,6 +198,9 @@
                 <h6>lorum ipsum</h6>
             </div>
         </div>
+    <div class="contentdiv">
+        <h2>[Agenda]</h2>
+    </div>
     </div>
 </body>
 </html>

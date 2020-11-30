@@ -43,9 +43,7 @@ Route::get('/VerwijderOefening{id}', [oefeningcontroller::class, 'destroy']);
 
 /* Trainer Dashboard */
 
-Route::get('/trainerDashboard', function () {
-    return view('trainer.TrainerDashboard');
-})->middleware('auth');
+Route::get('/trainerDashboard', [oefeningcontroller::class, 'showAllToTrainer'])->middleware('auth');
 
 Route::get('/AdminDashboard', [admincontroller::class, 'index'])->middleware('auth');
 
