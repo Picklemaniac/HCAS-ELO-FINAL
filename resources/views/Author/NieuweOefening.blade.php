@@ -51,8 +51,8 @@
                 Naam oefening: <input type="text" name="titel" required> * Verplicht<p>
                 Doelgroep: <select name="doelgroep" required><option>Jongste Jeugd</option><option>Onderbouw</option><option>Bovenbouw / Senioren</option></select> * Verplicht<p>
                 Domein: <select name="domein" required><option>Fysiek</option><option>Techniek</option><option>Tactiek</option><option>Mentaal</option></select> * Verplicht<p>
-                Sector: <select name="sector" required><option>Sector 1</option><option>Sector 2</option></select> * Verplicht<p>
-                Subsector: <select name="subsector" ><option>Subsector 1</option><option>Subsector 2</option></select> <p>
+                Sector: <input type="text" name="sector" required>* Verplicht<p>
+                Subsector: <input type="text" name="subsector"> <p>
                 Leerfase: <select name="leerfase" required><option>Aanleren</option><option>Oefenen</option><option>Testen</option></select> * Verplicht<p>
                 Trainingsonderdeeld: <select name="trainingonderdeel"><option>Warming up</option><option>Kern 1</option><option>Kern 2</option><option>Spel</option><option>Afsluiting</option></select> <p>
                 Spelfase: <select name="spelfase"><option>BB Uitverdedigen</option><option>BB Opbouwen</option><option>BB Aanvallen</option><option>BB Scoren</option><option>NBB Storen</option><option>NBB Vertragen</option><option>NBB Voorkomen</option><option>NBB Verijdelen</option></select> <p>

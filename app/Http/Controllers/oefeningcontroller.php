@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\oefening;
+use App\Models\training;
 use Illuminate\Http\Request;
 
 class oefeningcontroller extends Controller
@@ -141,6 +142,8 @@ class oefeningcontroller extends Controller
             $oefeningen = oefening::all();
         }
 
-        return view('Trainer\TrainerDashboard', ['oefeningen' => $oefeningen]);
+        $trainingen = training::all();
+
+        return view('Trainer\TrainerDashboard', ['oefeningen' => $oefeningen, 'trainingen' => $trainingen]);
     }
 }

@@ -39,7 +39,7 @@
                     @endif
 
                     @if($oefening->ImageLink != "")
-                        <img src="{{$oefening->ImageLink}}">
+                        <img width="400" src="{{$oefening->ImageLink}}">
                     @endif
                 </div>
 

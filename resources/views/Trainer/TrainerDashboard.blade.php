@@ -142,10 +142,6 @@
 
 <script>
 
-let domein = "";
-
-
-
 </script>
 
 <body>
@@ -181,6 +177,13 @@ let domein = "";
                 @endforeach
 
             </div>
+
+            <div class="columndiv">
+                <h4>Geselecteerde Oefeningen</h4>
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+            </div>
+
             <div class="columndiv">
                 <h4>Planning</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
@@ -191,11 +194,6 @@ let domein = "";
                     <input type="date" id="start" name="trip-start">
                     <p><button class="nicebtn">Training Aanmaken</button></p>
                 </form>
-            </div>
-            <div class="columndiv">
-                <h4>Geselecteerde Oefeningen</h4>
-                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                <h6>lorum ipsum</h6>
             </div>
         </div>
     <div class="contentdiv">
