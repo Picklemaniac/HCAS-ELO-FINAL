@@ -146,9 +146,10 @@
 </head>
 <body>
 <div class="container">
-    <form id="nieuweOefening" action="" method="post">
+    @csrf
+    <form id="nieuweOefening" action="/NieuweOefening" method="post">
         <h3>Oefening Toevoegen</h3>
-        <h4>Overal waar een * staat is verplicht in te vullen</h4>
+        <h4>Overal waar een * staat is verplicht in te vullen</h4><br>
         <fieldset>
             <input type="text" placeholder="Naam van de oefening *" name="titel" required><p>
         </fieldset>
@@ -210,7 +211,7 @@
         </fieldset>
         <fieldset>
             <h4>Aandachtspunten: </h4>
-            <textarea id="" cols="50" rows="5" name="voorkomendefouten"></textarea>
+            <textarea id="" cols="50" rows="5" name="aandachtspunten"></textarea>
         </fieldset>
         <fieldset>
             <h4>Hulpmiddelen: </h4>
@@ -228,6 +229,7 @@
             <h4>Moeilijker Maken: </h4>
             <textarea id="" cols="50" rows="5" name="moeilijkermaken"></textarea>
         </fieldset>
+        <input type="hidden" name="auteur" value="{{Auth::user()->voornaam}}">
         <fieldset>
             <button name="submit" type="submit" id="contact-submit" data-submit="Bezig met uw verzoek te verwerken">Oefening Aanmaken</button>
         </fieldset>
