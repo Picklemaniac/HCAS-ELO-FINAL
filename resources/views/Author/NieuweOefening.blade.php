@@ -201,32 +201,32 @@
             <input placeholder="Video Link" type="text" name="videolink">
         </fieldset>
         <fieldset>
-            <h4>Moeilijker Maken: </h4>
-            <textarea id="" cols="50" rows="5" name="moeilijkermaken"></textarea>
-        </fieldset>
-        <fieldset>
-            <h4>Hulpmiddelen: </h4>
-            <textarea id="" cols="50" rows="5" name="hulpmiddelen"></textarea>
+            <h4>Veel Voorkomende Fouten: </h4>
+            <textarea id="" cols="50" rows="5" name="voorkomendefouten"></textarea>
         </fieldset>
         <fieldset>
             <h4>Tips: </h4>
             <textarea id="" cols="50" rows="5" name="tips"></textarea>
         </fieldset>
         <fieldset>
-            <h4>Organisatie: </h4>
-            <textarea id="" cols="50" rows="5" name="organisatie"></textarea>
-        </fieldset>
-        <fieldset>
-            <h4>Veel Voorkomende Fouten: </h4>
-            <textarea id="" cols="50" rows="5" name="voorkomendefouten"></textarea>
-        </fieldset>
-        <fieldset>
             <h4>Aandachtspunten: </h4>
             <textarea id="" cols="50" rows="5" name="voorkomendefouten"></textarea>
         </fieldset>
         <fieldset>
+            <h4>Hulpmiddelen: </h4>
+            <textarea id="" cols="50" rows="5" name="hulpmiddelen"></textarea>
+        </fieldset>
+        <fieldset>
+            <h4>Organisatie: </h4>
+            <textarea id="" cols="50" rows="5" name="organisatie"></textarea>
+        </fieldset>
+        <fieldset>
             <h4>Makkelijker Maken: </h4>
             <textarea id="" cols="50" rows="5" name="makkelijkermaken"></textarea>
+        </fieldset>
+        <fieldset>
+            <h4>Moeilijker Maken: </h4>
+            <textarea id="" cols="50" rows="5" name="moeilijkermaken"></textarea>
         </fieldset>
         <fieldset>
             <button name="submit" type="submit" id="contact-submit" data-submit="Bezig met uw verzoek te verwerken">Oefening Aanmaken</button>
