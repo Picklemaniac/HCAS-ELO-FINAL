@@ -146,8 +146,8 @@
 </head>
 <body>
 <div class="container">
-    @csrf
     <form id="nieuweOefening" action="/NieuweOefening" method="post">
+        @csrf
         <h3>Oefening Toevoegen</h3>
         <h4>Overal waar een * staat is verplicht in te vullen</h4><br>
         <fieldset>
