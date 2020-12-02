@@ -139,10 +139,7 @@
         text-align: center;
     }
 </style>
-
-<script>
-
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <body>
 <div class="fulldiv">
@@ -154,44 +151,46 @@
         <div class="flex-container">
             <div class="columndiv">
                 <h4>Kies Domein</h4>
-                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                <div id="fysiek">
-                   <p><a href="/trainerDashboard?domein=Fysiek" class="nicebtn">1 Fysiek</a></p>
-                </div>
-                <div id="techniek">
-                   <p><a href="/trainerDashboard?domein=Techniek" class="nicebtn" onclick="">2. Techniek</a></p>
-                </div>
-                <div id="tactiek">
-                   <p><a href="/trainerDashboard?domein=Tactiek" class="nicebtn">3. Tactiek</a></p>
+                <hr>
+                <div class="domeinen">
+                        <p><button id="Fysiek" class="nicebtn domeinbtn">1 Fysiek</button></p>
+                        <p><button id="Techniek" class="nicebtn domeinbtn">2. Techniek</button></p>
+                        <p><button id="Tactiek" class="nicebtn domeinbtn">3. Tactiek</button></p>
                 </div>
             </div>
             <div class="columndiv">
                 <h4>Selecteer Oefening</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-                @foreach($oefeningen as $o)
-                    <div class="oefening">
-                        <span>{{$o->Titel}}</span> <br>
-                        <span>{{$o->Tijd}} minuten</span> <br>
-                    </div>
-                @endforeach
+                <div class="oefeningen">
 
+                </div>
             </div>
 
             <div class="columndiv">
                 <h4>Geselecteerde Oefeningen</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                <div class="geselecteerd">
 
+                </div>
             </div>
 
             <div class="columndiv">
                 <h4>Planning</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                 <form action="/nieuweTraining">
+
+                    <p><span>Team:</span></p>
+                    <select name="teamnummer">
+                        <option>H1</option>
+                        <option>H2</option>
+                        <option>H3</option>
+                    </select>
+
                     <p><span>Training Naam</span></p>
-                    <input type="text"/>
+                    <input type="text" name="TrainingNaam"/>
                     <p><span>Planning:</span></p>
-                    <input type="date" id="start" name="trip-start">
+                    <input type="date" id="start" name="starttijd">
                     <p><button class="nicebtn">Training Aanmaken</button></p>
                 </form>
             </div>
@@ -201,4 +200,41 @@
     </div>
     </div>
 </body>
+<script>
+    function getoefeningen() {
+
+        var domein = $( "button.active" ).attr('id');
+
+        $.ajax({
+            url: "/api/oefeningenDomein",
+            type: 'GET',
+            data: { Domein: domein },
+            beforeSend: function() {
+                //verwijder alle oefeningen
+                $(".oefeningen").empty();
+                //laat het laad icoontje zien
+                $(".oefeningen").append('<div class="loader"><span>Laden...</span></div>');
+            },
+            success:function (result){
+                $(".oefeningen").empty();
+                var data = $.parseJSON(JSON.stringify(result));
+                $.each(data, function(key, value) {
+                    $('.oefeningen').append($('<p><div class="oefening" id="oefening"><span> ' + value.Titel + '</span><br><span> ' + value.Tijd + ' minuten</span></div></p>'));
+                });
+
+            }});
+    }
+    $(document).ready(function() {
+        $(".domeinbtn").click(function(event) {
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+            }
+            else {
+                $('.domeinbtn').removeClass("active");
+                $(this).toggleClass("active");
+                getoefeningen();
+            }
+        });
+    })
+</script>
 </html>
