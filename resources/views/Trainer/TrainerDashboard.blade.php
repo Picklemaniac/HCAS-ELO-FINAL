@@ -140,6 +140,7 @@
     }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <body>
 <div class="fulldiv">
@@ -151,7 +152,7 @@
         <div class="flex-container">
             <div class="columndiv">
                 <h4>Kies Domein</h4>
-                <hr>
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
                 <div class="domeinen">
                         <p><button id="Fysiek" class="nicebtn domeinbtn">1 Fysiek</button></p>
                         <p><button id="Techniek" class="nicebtn domeinbtn">2. Techniek</button></p>
@@ -161,8 +162,7 @@
             <div class="columndiv">
                 <h4>Selecteer Oefening</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-
-                <div class="oefeningen">
+                <div class="oefeningen connectedSortable" id="sortable1" ondrop="drop(event)" ondragover="allowDrop(event)">
 
                 </div>
             </div>
@@ -170,7 +170,7 @@
             <div class="columndiv">
                 <h4>Geselecteerde Oefeningen</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                <div class="geselecteerd">
+                <div class="geselecteerd connectedSortable" id="sortable2" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 100%">
 
                 </div>
             </div>
@@ -201,6 +201,14 @@
     </div>
 </body>
 <script>
+    $(document).ready(function() {
+        $( "#sortable1, #sortable2" ).sortable({
+            connectWith: ".connectedSortable",
+            update: function(event, ui) {
+            }
+        }).disableSelection();
+    });
+
     function getoefeningen() {
 
         var domein = $( "button.active" ).attr('id');
@@ -219,7 +227,7 @@
                 $(".oefeningen").empty();
                 var data = $.parseJSON(JSON.stringify(result));
                 $.each(data, function(key, value) {
-                    $('.oefeningen').append($('<p><div class="oefening" id="oefening"><span> ' + value.Titel + '</span><br><span> ' + value.Tijd + ' minuten</span></div></p>'));
+                    $('.oefeningen').append($('<div style="margin: 20px" class="oefening connectedSortable" draggable="true" ondragstart="drag(event)"><span> ' + value.Titel + '</span><br><span> ' + value.Tijd + ' minuten</span></div>'));
                 });
 
             }});
@@ -236,5 +244,6 @@
             }
         });
     })
+
 </script>
 </html>
