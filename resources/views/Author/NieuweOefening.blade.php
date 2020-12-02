@@ -158,6 +158,10 @@
             <select name="doelgroep" required><option>Jongste Jeugd</option><option>Onderbouw</option><option>Bovenbouw / Senioren</option></select>
         </fieldset>
         <fieldset>
+            <h4>Domein: *</h4>
+            <select name="domein" required><option>Fysiek</option><option>Techniek</option><option>Tactiek</option><option>Mentaal</option></select>
+        </fieldset>
+        <fieldset>
             <input placeholder="Sector" type="text" name="sector" required>
         </fieldset>
         <fieldset>
@@ -172,10 +176,6 @@
             <select name="werkvorm"><option>oefenvorm</option><option>spelvorm</option><option>wedstrijdvorm</option></select>
         </fieldset>
         <fieldset>
-            <h4>Domein: *</h4>
-            <select name="domein" required><option>Fysiek</option><option>Techniek</option><option>Tactiek</option><option>Mentaal</option></select>
-        </fieldset>
-        <fieldset>
             <h4>Leerfase: *</h4>
             <select name="leerfase" required><option>Aanleren</option><option>Oefenen</option><option>Testen</option></select>
         </fieldset>
@@ -186,10 +186,6 @@
         <fieldset>
             <h4>Moeilijkheidsgraad: *</h4>
             <select name="moeilijkheidsgraad" required><option>Makkelijk</option><option>Middelmatig</option><option>Moeilijk</option></select>
-        </fieldset>
-        <fieldset>
-            <h4>Doel: *</h4>
-            <textarea id="" cols="50" rows="5" name="doel"></textarea> <p>
         </fieldset>
         <fieldset>
             <h4>Tijdsduur (min): *</h4>
