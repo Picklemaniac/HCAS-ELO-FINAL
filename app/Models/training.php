@@ -15,4 +15,5 @@ class training extends Model
     {
         return $this->belongsToMany('App\Models\oefening', 'trainingen_oefeningen', "trainingnummer", "oefeningnummer");
     }
+
 }

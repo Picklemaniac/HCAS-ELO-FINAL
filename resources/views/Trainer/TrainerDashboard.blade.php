@@ -138,6 +138,7 @@
         border: 2px solid #ffc04c;
         text-align: center;
     }
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -157,12 +158,13 @@
                         <p><button id="Fysiek" class="nicebtn domeinbtn">1 Fysiek</button></p>
                         <p><button id="Techniek" class="nicebtn domeinbtn">2. Techniek</button></p>
                         <p><button id="Tactiek" class="nicebtn domeinbtn">3. Tactiek</button></p>
+                        <p><button id="Mentaal" class="nicebtn domeinbtn">4. Mentaal</button></p>
                 </div>
             </div>
             <div class="columndiv">
                 <h4>Selecteer Oefening</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                <div class="oefeningen connectedSortable" id="sortable1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="oefeningen connectedSortable" id="sortable1" ondrop="drop(event)" ondragover="allowDrop(event)" style="height: 100%">
 
                 </div>
             </div>
@@ -178,8 +180,8 @@
             <div class="columndiv">
                 <h4>Planning</h4>
                 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-                <form action="/nieuweTraining">
-
+                <form class="nieuwetraining" action="/nieuweTraining">
+                    <input name="oefeningen" type="hidden" id="selected_oefeningen">
                     <p><span>Team:</span></p>
                     <select name="teamnummer">
                         <option>H1</option>
@@ -188,10 +190,10 @@
                     </select>
 
                     <p><span>Training Naam</span></p>
-                    <input type="text" name="TrainingNaam"/>
+                    <input type="text" name="trainingnaam" required/>
                     <p><span>Planning:</span></p>
                     <input type="date" id="start" name="starttijd">
-                    <p><button class="nicebtn">Training Aanmaken</button></p>
+                    <p><input type="submit" class="nicebtn" value="Training Aanmaken"/></p>
                 </form>
             </div>
         </div>
@@ -205,6 +207,7 @@
         $( "#sortable1, #sortable2" ).sortable({
             connectWith: ".connectedSortable",
             update: function(event, ui) {
+                createoefeningen();
             }
         }).disableSelection();
     });
@@ -218,20 +221,30 @@
             type: 'GET',
             data: { Domein: domein },
             beforeSend: function() {
-                //verwijder alle oefeningen
                 $(".oefeningen").empty();
-                //laat het laad icoontje zien
                 $(".oefeningen").append('<div class="loader"><span>Laden...</span></div>');
             },
             success:function (result){
                 $(".oefeningen").empty();
                 var data = $.parseJSON(JSON.stringify(result));
                 $.each(data, function(key, value) {
-                    $('.oefeningen').append($('<div style="margin: 20px" class="oefening connectedSortable" draggable="true" ondragstart="drag(event)"><span> ' + value.Titel + '</span><br><span> ' + value.Tijd + ' minuten</span></div>'));
+                    $('.oefeningen').append($('<div style="margin: 20px" class="oefening connectedSortable" draggable="true" ondragstart="drag(event)"> ' +
+                        '<input type="hidden" value="'+value.OefeningNummer+'"/>' +
+                        '<span> ' + value.Titel + '</span>' +
+                        '<br><span> ' + value.Tijd + ' minuten</span>' +
+                        '</div>'));
                 });
 
             }});
     }
+
+    function createoefeningen() {
+        var selected = $(".geselecteerd").children('.oefening').children('input');
+        var vals = [];
+        for(var i=0;typeof(selected[i])!='undefined';vals.push(selected[i++].getAttribute('value')));
+        $("#selected_oefeningen").val(vals.join());
+    }
+
     $(document).ready(function() {
         $(".domeinbtn").click(function(event) {
             if ($(this).hasClass("active")) {

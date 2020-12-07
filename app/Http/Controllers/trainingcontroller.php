@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\oefening;
 use App\Models\training;
 use Illuminate\Http\Request;
 
@@ -13,14 +14,26 @@ class trainingcontroller extends Controller
         return view('userDashboard', ['trainingen' => $trainingen]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function create(Request $request)
     {
-        //
+
+
+        //Maak nieuwe training
+        $training = new training;
+
+        $training->teamnummer = $request->teamnummer;
+        $training->trainingnaam = $request->trainingnaam;
+        $training->starttijd = $request->starttijd;
+
+        $training->save();
+
+        $alloefeningen = explode(',', $request->oefeningen);
+
+        //Voeg alle oefeningen samen met training in koppel tabel
+        $training->oefeningen()->sync(oefening::find($alloefeningen));
+
+        return redirect('/trainerDashboard');
     }
 
     /**
