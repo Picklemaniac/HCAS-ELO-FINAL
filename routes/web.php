@@ -47,6 +47,8 @@ Route::get('/trainerDashboard', [oefeningcontroller::class, 'showAllToTrainer'])
 
 Route::get('/nieuweTraining', [trainingcontroller::class, 'create'])->middleware('auth');
 
+Route::get('/verwijderTraining{id}', [trainingcontroller::class, 'destroy'])->middleware('auth');
+
 /*--------*/
 
 /* Admin Dashboard*/

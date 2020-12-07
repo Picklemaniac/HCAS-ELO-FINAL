@@ -30,7 +30,7 @@
             <div class="w3-card-4 w3-margin w3-white">
                 <div class="w3-container">
                     <h3><b>{{$oefening->Titel}}</b></h3>
-                    <h5>Door: {{$oefening->Auteur}}</h5>
+                    <h5>Door: {{ucfirst($oefening->Auteur)}}</h5>
 
                     @if($oefening->VideoLink != "")
                     <iframe width="100%" height="400px"

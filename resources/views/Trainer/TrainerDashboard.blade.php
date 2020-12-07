@@ -147,6 +147,10 @@
 <div class="fulldiv">
 
     <div class="contentdiv">
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit">Uitloggen</button>
+        </form>
         <h1>Welkom {{ucfirst(Auth::user()->voornaam)}} </h1>
     </div>
 
@@ -198,13 +202,11 @@
             </div>
         </div>
     <div class="contentdiv">
-        <h2>[Agenda]</h2>
-    </div>
-    <div class="contentdiv">
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <button type="submit">Uitloggen</button>
-        </form>
+        @foreach($trainingen as $t)
+        <p>{{$t->TrainingNaam}} - ｜ @foreach($t->oefeningen as $o)<a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a> ｜ @endforeach <button onclick="window.location.href='/verwijderTraining{{$t->TrainingNummer}}'">Verwijderen</button></p>
+            <p>@if($t->startTijd != null) Ingepland op: {{$t->startTijd}}.@endif Voor team: {{$t->TeamNummer}}</p>
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        @endforeach
     </div>
     </div>
 </body>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\oefening;
 use App\Models\training;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class oefeningcontroller extends Controller
 {
@@ -130,6 +131,7 @@ class oefeningcontroller extends Controller
     public function destroy($id)
     {
         oefening::where('OefeningNummer', $id)->delete();
+
         return redirect()->route('AuteurDashboard');
     }
 
