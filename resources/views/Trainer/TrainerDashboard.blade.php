@@ -196,7 +196,7 @@
                     <p><span>Training Naam</span></p>
                     <input type="text" name="trainingnaam" required/>
                     <p><span>Planning:</span></p>
-                    <input type="date" id="start" name="starttijd">
+                    <input type="datetime-local" id="start" name="starttijd">
                     <p><input type="submit" class="nicebtn" value="Training Aanmaken"/></p>
                 </form>
             </div>
