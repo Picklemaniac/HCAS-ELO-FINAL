@@ -198,6 +198,12 @@
     <div class="contentdiv">
         <h2>[Agenda]</h2>
     </div>
+    <div class="contentdiv">
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit">Uitloggen</button>
+        </form>
+    </div>
     </div>
 </body>
 <script>

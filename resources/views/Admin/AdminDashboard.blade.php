@@ -53,6 +53,16 @@
                     <h4><a href="trainerDashboard">Training Omgeving</a></h4>
                 </div>
             </div>
+            <div class="w3-card w3-margin w3-margin-top">
+                <div class="w3-container w3-white">
+                    <h4>
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit">Uitloggen</button>
+                        </form>
+                    </h4>
+                </div>
+            </div>
         </div>
     </div><br>
 </div>
