@@ -65,7 +65,7 @@ class oefeningcontroller extends Controller
 
     public function showAllToAuthor()
     {
-        $oefeningen = oefening::all();
+        $oefeningen = oefening::sortable()->simplePaginate(10);
         return view('Author\AuthorDashboard', ['oefeningen' => $oefeningen]);
     }
 

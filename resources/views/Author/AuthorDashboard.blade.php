@@ -12,6 +12,30 @@
         background-repeat: repeat;
         background-color: #F78B14;
     }
+
+    #oefeningen {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #oefeningen td, #gebruikers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #oefeningen tr:nth-child(even){background-color: #f2f2f2;}
+
+    #oefeningen th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #F78B14;
+        color: white;
+    }
+
 </style>
 <body class="">
 
@@ -30,10 +54,16 @@
                 </div>
 
                 <div class="w3-container">
+                    <table id="oefeningen">
+                        <tr><td>Oefening</td><td>Acties</td></tr>
                     @foreach ($oefeningen as $o)
-                            <p><a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a> <button onclick="window.location.href='/EditOefening{{$o->OefeningNummer}}'">Aanpassen</button> <button onclick="window.location.href='/VerwijderOefening{{$o->OefeningNummer}}'">Verwijderen</button>  </p>
-                             <hr>
+                        <tr><td><a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a></td>
+                            <td> <button onclick="window.location.href='/EditOefening{{$o->OefeningNummer}}'">Aanpassen</button> <button onclick="window.location.href='/VerwijderOefening{{$o->OefeningNummer}}'">Verwijderen</button> </td>
+                        </tr>
                     @endforeach
+                    </table>
+                    <p></p>
+                    {!! $oefeningen->appends(\Request::except('page'))->render() !!}
                 </div>
             </div>
         </div>
