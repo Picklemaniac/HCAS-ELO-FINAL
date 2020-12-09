@@ -9,7 +9,7 @@ use \App\Http\Controllers\admincontroller;
 /* Autorisatie & Index */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return redirect('/login');
 });
 
 /*--------*/

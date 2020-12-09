@@ -56,8 +56,12 @@
                         </form>
                     </h4>
                     <h4> Groep:
-                       <select>
-                           <option>H1</option>
+                       <select name="team">
+                           @foreach($teams as $t)
+                               @if(Auth::user()->teamnummer === $t->TeamNaam)
+                                   <option>{{$t->TeamNaam}}</option>
+                               @endif
+                           @endforeach
                        </select>
                     </h4>
 
