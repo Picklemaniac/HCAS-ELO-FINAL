@@ -15,7 +15,9 @@
     #gebruikers {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
-        width: 50%;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #gebruikers td, #gebruikers th {
@@ -47,7 +49,7 @@
     <div class="w3-row">
 
         <div class="w3-col l8 s12">
-            <div class="w3-card-4 w3-margin w3-white">
+            <div class="w3-card-4 w3-margin w3-white w3-center">
                 <div class="w3-container">
                     <h3><b>Bestaande Accounts</b></h3>
                 </div>
@@ -59,7 +61,7 @@
                         <tr><td>{{$u->achternaam}}</td><td>{{$u->tussenvoegsel}} </td><td>{{$u->voornaam}}</td></tr>
                     @endforeach
                     </table>
-
+                    <p></p>
                     {!! $users->appends(\Request::except('page'))->render() !!}
                 </div>
             </div>
