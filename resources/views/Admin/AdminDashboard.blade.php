@@ -12,6 +12,29 @@
         background-repeat: repeat;
         background-color: #F78B14;
     }
+    #gebruikers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+    }
+
+    #gebruikers td, #gebruikers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #gebruikers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #gebruikers tr:hover {background-color: #ddd;}
+
+    #gebruikers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #F78B14;
+        color: white;
+    }
+
 </style>
 <body class="">
 
@@ -30,9 +53,14 @@
                 </div>
 
                 <div class="w3-container">
+                    <table id="gebruikers">
+                        <tr><td>@sortablelink('achternaam')</td><td>@sortablelink('tussenvoegsel')</td><td>@sortablelink('voornaam')</td></tr>
                     @foreach ($users as $u)
-                        <p>{{$u->achternaam}} {{$u->tussenvoegsel}} {{$u->voornaam}}</p>
+                        <tr><td>{{$u->achternaam}}</td><td>{{$u->tussenvoegsel}} </td><td>{{$u->voornaam}}</td></tr>
                     @endforeach
+                    </table>
+
+                    {!! $users->appends(\Request::except('page'))->render() !!}
                 </div>
             </div>
         </div>

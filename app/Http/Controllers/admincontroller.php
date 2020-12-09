@@ -9,7 +9,8 @@ class admincontroller extends Controller
 {
     public function index()
     {
-        $users = User::all();
+        $users = User::sortable()->simplePaginate(5);
+
         return view('Admin\AdminDashboard', ['users' => $users]);
     }
 }
