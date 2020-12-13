@@ -139,6 +139,30 @@
         text-align: center;
     }
 
+    #trainingen {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #trainingen td, #gebruikers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #trainingen tr:nth-child(even){background-color: #f2f2f2;}
+
+    #trainingen th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #F78B14;
+        color: white;
+    }
+
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -188,9 +212,9 @@
                     <input name="oefeningen" type="hidden" id="selected_oefeningen">
                     <p><span>Team:</span></p>
                     <select name="teamnummer">
-                        <option>H1</option>
-                        <option>H2</option>
-                        <option>H3</option>
+                        @foreach($teams as $t)
+                          <option>{{$t->TeamNaam}}</option>
+                        @endforeach
                     </select>
 
                     <p><span>Training Naam</span></p>
@@ -201,12 +225,22 @@
                 </form>
             </div>
         </div>
-    <div class="contentdiv">
-        @foreach($trainingen as $t)
-        <p>{{$t->TrainingNaam}} - ｜ @foreach($t->oefeningen as $o)<a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a> ｜ @endforeach <button onclick="window.location.href='/verwijderTraining{{$t->TrainingNummer}}'">Verwijderen</button></p>
-            <p>@if($t->startTijd != null) Ingepland op: {{$t->startTijd}}.@endif Voor team: {{$t->TeamNummer}}</p>
-            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-        @endforeach
+    <div class="contentdiv w3-center">
+        <h3>Alle Trainingen</h3>
+        {!! $trainingen->appends(\Request::except('page'))->render() !!}
+        <p></p>
+        <table id="trainingen">
+            <tr><td>Titel</td><td>Oefeningen</td><td>@sortablelink('created_at', 'Ingepland voor')</td><td>@sortablelink('TeamNummer', 'Team')</td><td>Acties</td></tr>
+            @foreach($trainingen as $t)
+                <tr>
+                    <td>{{$t->TrainingNaam}}</td>
+                    <td> ｜ @foreach($t->oefeningen as $o)<a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a> ｜ @endforeach</td>
+                    <td>{{$t->startTijd}}</td>
+                    <td>{{$t->TeamNummer}}</td>
+                    <td><button onclick="window.location.href='/verwijderTraining{{$t->TrainingNummer}}'">Verwijderen</button></td>
+                </tr>
+            @endforeach
+        </table>
     </div>
     </div>
 </body>

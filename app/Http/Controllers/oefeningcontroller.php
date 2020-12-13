@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\oefening;
+use App\Models\team;
 use App\Models\training;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -136,9 +137,10 @@ class oefeningcontroller extends Controller
     }
 
     public function showAllToTrainer() {
-        $trainingen = training::all();
+        $trainingen = training::simplePaginate(5);
         $oefeningen = oefening::all();
+        $teams = team::all();
 
-        return view('Trainer\TrainerDashboard', ['oefeningen' => $oefeningen, 'trainingen' => $trainingen]);
+        return view('Trainer\TrainerDashboard', ['oefeningen' => $oefeningen, 'trainingen' => $trainingen, 'teams' => $teams]);
     }
 }

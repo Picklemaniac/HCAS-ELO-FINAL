@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\oefening;
 use App\Models\training;
+use App\Models\team;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,8 @@ class trainingcontroller extends Controller
     public function index()
     {
         $trainingen = training::all();
-        return view('userDashboard', ['trainingen' => $trainingen]);
+        $teams = team::all();
+        return view('userDashboard', ['trainingen' => $trainingen, 'teams' => $teams]);
     }
 
 
