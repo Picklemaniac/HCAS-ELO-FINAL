@@ -142,27 +142,52 @@
             color: rgb(12, 97, 33);
 
         }
+
         .input {
             margin: 10px;
             padding: 5px;
         }
+
         .center {
             margin: 10px;
-            padding: 5px    ;
+            padding: 5px;
+        }
+
+        .hockeyimage{
+            max-width: 950px;
+            padding: 40px 40px;
+            background-image: url("https://media.istockphoto.com/photos/penalty-picture-id144351598");
+            background-repeat: no-repeat;
+
+        }
+        .banner{
+            background-color: #F78B14;
+            color: white;
+            text-align: center;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
         }
 
     </style>
 </head>
 <body>
 <div class="container">
+    <div class="card hockeyimage">
+        <h1 class="banner">Hockeyclub Asten-someren</h1>
     <div class="card card-container">
+
         <div class="col-md-8">
-            <div class="card-header input">{{ __('HCAS Inloggen') }}</div>
+            <div class="card-header input">
+                <img style="width: 250px;" src="https://lh3.googleusercontent.com/-2wRKG2ArTPY-TDH57fOrJeU_KVsm368dyJEyp2uddqaHU9bA-1t04wUsFns7JR6aHgZbQ=s170"/>
+            </div>
 
             <div class="card-body">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
-
                     <div class="form-group row">
                         <div class="col-md-6 input">
                             <input placeholder="Gebruikersnaam" id="username" type="username" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autofocus>
@@ -182,7 +207,7 @@
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
-                                    </span>
+                            </span>
                             @enderror
                         </div>
                     </div>
@@ -194,6 +219,7 @@
                     </div>
                 </form>
             </div>
+        </div>
         </div>
     </div>
 </div>
