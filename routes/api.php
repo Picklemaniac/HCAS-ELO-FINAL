@@ -22,3 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('oefeningen', [apiController::class, 'oefeningIndex'] );
 
 Route::get('oefeningenDomein', [apiController::class, 'oefeningDomein'] );
+
+Route::get('trainingen', [apiController::class, 'trainingIndex'] );
+
+Route::get('trainingenTeam', [apiController::class, 'trainingTeam'] );
+

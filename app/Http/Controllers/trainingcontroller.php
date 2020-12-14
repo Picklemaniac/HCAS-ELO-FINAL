@@ -12,7 +12,13 @@ class trainingcontroller extends Controller
 {
     public function index()
     {
-        $trainingen = training::all();
+        if(Request()->has('TeamNummer')) {
+         $trainingen = training::where('TeamNummer', request('TeamNummer'))->get();
+        }
+        else {
+         $trainingen = training::all();
+        }
+
         $teams = team::all();
         return view('userDashboard', ['trainingen' => $trainingen, 'teams' => $teams]);
     }

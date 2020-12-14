@@ -30,7 +30,8 @@
     <div class="w3-row">
         <div class="w3-col l8 s12">
             <div class="w3-card-4 w3-margin w3-white">
-                    @foreach ($trainingen as $t)
+                @if(Auth::user()->IsTrainer == 1 || Auth::user()->IsAuthor == 1 || Auth::user()->IsAdmin == 1)
+                @foreach ($trainingen as $t)
                             <div class="w3-container">
                                 <h3><b>{{ $t->TrainingNaam }}</b></h3>
                                 <h5>{{ $t->created_at->toDateString() }}</h5>
@@ -42,6 +43,23 @@
                             @endforeach
                         <hr>
                     @endforeach
+                @else
+                    @foreach ($trainingen as $t)
+                        @if($t->TeamNummer == Auth::user()->teamnummer)
+                        <div class="w3-container">
+                            <h3><b>{{ $t->TrainingNaam }}</b></h3>
+                            <h5>{{ $t->created_at->toDateString() }}</h5>
+                        </div>
+                        @foreach($t->oefeningen as $o)
+                            <div class="w3-container, gray">
+                                <h4><a href="/detailsOefeningen{{$o->OefeningNummer}}">{{$o->Titel}}</a></h4>
+                            </div>
+                        @endforeach
+                        <hr>
+                        @endif
+                    @endforeach
+                @endif
+
                 <hr>
             </div>
         </div>
