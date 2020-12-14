@@ -12,6 +12,10 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+Route::get('/registreren', function () {
+    return view('auth.register');
+})->middleware('auth');
+
 /*--------*/
 
 /* User Dashboard*/

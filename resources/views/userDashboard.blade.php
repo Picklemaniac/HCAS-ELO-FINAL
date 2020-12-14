@@ -56,13 +56,21 @@
                         </form>
                     </h4>
                     <h4> Groep:
-                       <select name="team">
+                        @if(Auth::user()->IsTrainer == 1 || Auth::user()->IsAuthor == 1 || Auth::user()->IsAdmin == 1)
+                            <select name="team">
+                                @foreach($teams as $t)
+                                  <option>{{$t->TeamNaam}}</option>
+                                @endforeach
+                            </select>
+                        @else
+                        <select name="team">
                            @foreach($teams as $t)
                                @if(Auth::user()->teamnummer === $t->TeamNaam)
                                    <option>{{$t->TeamNaam}}</option>
                                @endif
                            @endforeach
                        </select>
+                        @endif()
                     </h4>
 
 

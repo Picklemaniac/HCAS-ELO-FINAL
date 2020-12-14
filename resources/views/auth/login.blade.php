@@ -156,7 +156,7 @@
         .hockeyimage{
             max-width: 950px;
             padding: 40px 40px;
-            background-image: url("https://media.istockphoto.com/photos/penalty-picture-id144351598");
+            background-image: url("https://storage.demediahub.nl/13700000/13680000/13679000/144277327669537_13678928_1280.jpg");
             background-repeat: no-repeat;
 
         }
@@ -182,7 +182,7 @@
 
         <div class="col-md-8">
             <div class="card-header input">
-                <img style="width: 250px;" src="https://lh3.googleusercontent.com/-2wRKG2ArTPY-TDH57fOrJeU_KVsm368dyJEyp2uddqaHU9bA-1t04wUsFns7JR6aHgZbQ=s170"/>
+                <img style="width: 250px;" src="https://lh3.googleusercontent.com/-2wRKG2ArTPY-TDH57fOrJeU_KVsm368dyJEyp2uddqaHU9bA-1t04wUsFns7JR6aHgZbQ=s170"/> Inloggen
             </div>
 
             <div class="card-body">

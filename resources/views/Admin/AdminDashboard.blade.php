@@ -70,7 +70,7 @@
         <div class="w3-col l4">
             <div class="w3-card w3-margin w3-margin-top">
                 <div class="w3-container w3-white">
-                    <h4><a href="//noggeenroutenaarregisterpagina">Nieuw Account Registreren</a></h4>
+                    <h4><a href="/registreren">Nieuw Account Registreren</a></h4>
                 </div>
             </div>
             <div class="w3-card w3-margin w3-margin-top">
