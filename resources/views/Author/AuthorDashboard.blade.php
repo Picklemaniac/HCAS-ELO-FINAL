@@ -5,38 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-    body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-    body, html {
-        height: 100%;
-        background-repeat: repeat;
-        background-color: #F78B14;
-    }
-
-    #oefeningen {
-        font-family: Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    #oefeningen td, #gebruikers th {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-
-    #oefeningen tr:nth-child(even){background-color: #f2f2f2;}
-
-    #oefeningen th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #F78B14;
-        color: white;
-    }
-
-</style>
+<link href="{{ asset('css/authorcss/author.css') }}" media="all" rel="stylesheet" type="text/css" />
 <body class="">
 
 <div class="w3-content" style="max-width:1400px">
