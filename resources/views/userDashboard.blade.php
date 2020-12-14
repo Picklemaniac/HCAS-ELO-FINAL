@@ -75,8 +75,9 @@
                     </h4>
                     <h4> Groep:
                         @if(Auth::user()->IsTrainer == 1 || Auth::user()->IsAuthor == 1 || Auth::user()->IsAdmin == 1)
-                            <select name="team">
-                                @foreach($teams as $t)
+                            <select name="team" onchange="window.location = '/userDashboard?TeamNummer=' + this.options[this.selectedIndex].value;">
+                                <option value="">Selecteer Team</option>
+                            @foreach($teams as $t)
                                   <option>{{$t->TeamNaam}}</option>
                                 @endforeach
                             </select>
