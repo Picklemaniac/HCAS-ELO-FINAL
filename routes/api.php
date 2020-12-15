@@ -23,6 +23,8 @@ Route::get('oefeningen', [apiController::class, 'oefeningIndex'] );
 
 Route::get('oefeningenDomein', [apiController::class, 'oefeningDomein'] );
 
+Route::get('oefeningenTitel', [apiController::class, 'oefeningSearchNaam'] );
+
 Route::get('trainingen', [apiController::class, 'trainingIndex'] );
 
 Route::get('trainingenTeam', [apiController::class, 'trainingTeam'] );

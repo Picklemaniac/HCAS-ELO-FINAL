@@ -16,6 +16,10 @@ class apiController extends Controller
        return oefening::where('Domein', $request->input('Domein'))->get();
     }
 
+    public function oefeningSearchNaam(Request $request) {
+        return oefening::where('Titel', 'like', '%'.$request->input('Titel').'%')->get();
+    }
+
     public function trainingIndex() {
         return training::all();
     }
