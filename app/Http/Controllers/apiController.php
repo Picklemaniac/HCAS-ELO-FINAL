@@ -6,6 +6,8 @@ use App\Models\training;
 use Illuminate\Http\Request;
 use App\Models\oefening;
 
+
+
 class apiController extends Controller
 {
     public function oefeningIndex() {
