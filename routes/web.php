@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\trainingcontroller;
 use \App\Http\Controllers\oefeningcontroller;
 use \App\Http\Controllers\admincontroller;
+use \App\Http\Controllers\usercontroller;
 
 /* Autorisatie & Index */
 
@@ -58,6 +59,9 @@ Route::get('/verwijderTraining{id}', [trainingcontroller::class, 'destroy'])->mi
 /* Admin Dashboard*/
 
 Route::get('/AdminDashboard', [admincontroller::class, 'index'])->middleware('auth');
+Route::get('/MakeAdmin{id}', [usercontroller::class, 'MakeAdmin'])->middleware('auth');
+Route::get('/MakeAuthor{id}', [usercontroller::class, 'MakeAuthor'])->middleware('auth');
+Route::get('/MakeTrainer{id}', [usercontroller::class, 'MakeTrainer'])->middleware('auth');
 
 /*--------*/
 
