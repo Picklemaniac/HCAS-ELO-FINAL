@@ -1,0 +1,12 @@
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.gray {
+    border-radius: 25px;
+    background-color: lightgray;
+    padding: 1%;
+    margin: 2%;
+}
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-color: #F78B14;
+}

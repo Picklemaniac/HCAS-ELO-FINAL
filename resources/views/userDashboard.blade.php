@@ -5,20 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-    body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-    .gray {
-        border-radius: 25px;
-        background-color: lightgray;
-        padding: 1%;
-        margin: 2%;
-    }
-    body, html {
-        height: 100%;
-        background-repeat: no-repeat;
-        background-color: #F78B14;
-    }
-</style>
+<link href="{{ asset('css/userscss/users.css') }}" media="all" rel="stylesheet" type="text/css" />
+
 <body>
 
 <div class="w3-content" style="max-width:1400px">
