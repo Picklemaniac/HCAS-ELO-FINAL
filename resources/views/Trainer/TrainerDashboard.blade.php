@@ -21,6 +21,13 @@
         <h1>Welkom {{ucfirst(Auth::user()->voornaam)}} </h1>
     </div>
 
+
+    <div class="contentdiv">
+        <input type="text" placeholder="Zoeken..." id="searchTitelInput"/>
+
+    </div>
+
+
         <div class="flex-container">
             <div class="columndiv">
                 <h4>Kies Domein</h4>
@@ -97,8 +104,32 @@
         }).disableSelection();
     });
 
-    function getoefeningen() {
+    function searchoefeningen(SearchResult) {
+        console.log(SearchResult)
+        $.ajax({
+            url: "/api/oefeningenTitel",
+            type: 'GET',
+            data: { Titel: SearchResult },
+            beforeSend: function() {
+                $(".oefeningen").empty();
+                $(".oefeningen").append('<div class="loader"><span>Laden...</span></div>');
+            },
+            success:function (result){
+                $(".oefeningen").empty();
+                var data = $.parseJSON(JSON.stringify(result));
+                $.each(data, function(key, value) {
+                    $('.oefeningen').append($('<div style="margin: 20px" class="oefening connectedSortable" draggable="true" ondragstart="drag(event)"> ' +
+                        '<input type="hidden" value="'+value.OefeningNummer+'"/>' +
+                        '<span> ' + value.Titel + '</span>' +
+                        '<br><span> ' + value.Tijd + ' minuten</span>' +
+                        '</div>'));
+                });
 
+            }});
+    }
+
+
+    function getoefeningen() {
         var domein = $( "button.active" ).attr('id');
 
         $.ajax({
@@ -129,6 +160,15 @@
         for(var i=0;typeof(selected[i])!='undefined';vals.push(selected[i++].getAttribute('value')));
         $("#selected_oefeningen").val(vals.join());
     }
+
+    $(document).ready(function() {
+        $("#searchTitelInput").keyup(function() {
+            var SearchResult = $(this).val();
+            searchoefeningen(SearchResult)
+
+        });
+    });
+
 
     $(document).ready(function() {
         $(".domeinbtn").click(function(event) {

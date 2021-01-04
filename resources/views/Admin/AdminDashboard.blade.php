@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="nl">
-<title>Auteur Dashboard</title>
+<title>Admin Dashboard</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -25,9 +25,16 @@
 
                 <div class="w3-container">
                     <table id="gebruikers">
-                        <tr><td>@sortablelink('achternaam')</td><td>@sortablelink('tussenvoegsel')</td><td>@sortablelink('voornaam')</td></tr>
+                        <tr><td>@sortablelink('achternaam')</td><td>@sortablelink('tussenvoegsel')</td><td>@sortablelink('voornaam')</td><td>Rollen</td></tr>
                     @foreach ($users as $u)
-                        <tr><td>{{$u->achternaam}}</td><td>{{$u->tussenvoegsel}} </td><td>{{$u->voornaam}}</td></tr>
+                        <tr><td>{{$u->achternaam}}</td><td>{{$u->tussenvoegsel}} </td><td>{{$u->voornaam}}</td>
+                        <td>
+                            Admin: @if($u->IsAdmin == 1) <input type="checkbox" onclick="window.location.href='/MakeAdmin{{$u->id}}'" checked/> @else <input type="checkbox" onclick="window.location.href='/MakeAdmin{{$u->id}}'"/> @endif
+                            Auteur: @if($u->IsAuthor == 1) <input type="checkbox" onclick="window.location.href='/MakeAuthor{{$u->id}}'" checked/> @else <input type="checkbox" onclick="window.location.href='/MakeAuthor{{$u->id}}'"/> @endif
+                            Trainer: @if($u->IsTrainer == 1) <input type="checkbox" onclick="window.location.href='/MakeTrainer{{$u->id}}'" checked /> @else <input type="checkbox" onclick="window.location.href='/MakeTrainer{{$u->id}}'"/> @endif
+
+                        </td>
+                        </tr>
                     @endforeach
                     </table>
                     <p></p>
