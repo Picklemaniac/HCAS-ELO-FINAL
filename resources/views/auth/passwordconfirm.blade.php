@@ -12,19 +12,19 @@
         <div class="card card-container">
             <div class="col-md-8">
                 <div class="card-header input">
-                    <img style="width: 250px;" src="https://lh3.googleusercontent.com/-2wRKG2ArTPY-TDH57fOrJeU_KVsm368dyJEyp2uddqaHU9bA-1t04wUsFns7JR6aHgZbQ=s170"/> Inloggen
+                    <img style="width: 250px;" src="https://lh3.googleusercontent.com/-2wRKG2ArTPY-TDH57fOrJeU_KVsm368dyJEyp2uddqaHU9bA-1t04wUsFns7JR6aHgZbQ=s170"/> Nieuw wachtwoord:
                 </div>
 
                 <div class="card-body">
-                    <form method="POST">
+                    <form method="POST" action="/ChangePassword{{Auth::user()->id}}}">
+                        @csrf
                         <div class="form-group row">
                             <div class="col-md-6 input">
-                                <input placeholder="Wachtwoord" id="username" type="username">
+                                <input placeholder="Wachtwoord" name="password" id="password" type="password">
                             </div>
                         </div>
                         <div class="col-md-8 offset-md-4 center">
-                            <button type="submit" class="btn btn-primary">
-                            </button>
+                            <button type="submit" class="btn btn-primary">Veranderen</button>
                         </div>
                     </form>
                 </div>
