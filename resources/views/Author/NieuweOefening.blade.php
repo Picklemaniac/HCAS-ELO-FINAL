@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Nieuwe Oefening</title>
-    <link href="{{ asset('css/author/new.css') }}" media="all" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/authorcss/new.css') }}" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="container">
