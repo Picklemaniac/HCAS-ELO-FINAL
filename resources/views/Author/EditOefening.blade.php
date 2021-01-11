@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Oefening aanpassen</title>
-    <link href="{{ asset('css/author/edit.css') }}" media="all" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/authorcss/edit.css') }}" media="all" rel="stylesheet" type="text/css" />
 
 
 </head>
