@@ -13,9 +13,14 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-Route::get('/registreren', function () {
-    return view('auth.register');
-})->middleware('auth');
+Route::get('/FirstTimeLogin', [usercontroller::class, 'PasswordPage'])->middleware('auth');
+
+Route::post('/ChangePassword{id}', [usercontroller::class, 'ChangePassword'])->middleware('auth');
+
+
+Route::get('/registreren', [admincontroller::class, 'register'])->middleware('auth');
+
+Route::post('/newUser', [admincontroller::class, 'newUser'])->middleware('auth');
 
 /*--------*/
 

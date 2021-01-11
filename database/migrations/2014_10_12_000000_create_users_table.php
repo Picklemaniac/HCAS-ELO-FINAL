@@ -22,12 +22,12 @@ class CreateUsersTable extends Migration
             $table->string('tussenvoegsel')->nullable();
             $table->string('achternaam');
             $table->string('email')->unique();
-            $table->string('username');
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->boolean('IsTrainer')->default(false);
             $table->boolean('IsAuthor')->default(false);
             $table->boolean('IsAdmin')->default(false);
+            $table->boolean('FirstTimeLogin')->default(true);
             $table->rememberToken();
             $table->timestamps();
         });

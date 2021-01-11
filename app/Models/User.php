@@ -21,8 +21,8 @@ class User extends Authenticatable
     protected $fillable = [
         'lidnummer', 'teamnummer', 'voornaam',
         'tussenvoegsel', 'achternaam', 'email',
-        'username', 'IsTrainer',
-        'IsAuthor', 'IsAdmin', 'created_at', 'updated_at', 'password'
+        'IsTrainer', 'IsAuthor', 'IsAdmin', 'FirstTimeLogin',
+        'created_at', 'updated_at', 'password'
     ];
 
     public $sortable = ['voornaam', 'tussenvoegsel', 'achternaam','lidnummer'];

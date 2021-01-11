@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\user;
+use Illuminate\Support\Facades\Hash;
 
 class usercontroller extends Controller
 {
@@ -39,5 +40,22 @@ class usercontroller extends Controller
         $userID->save();
 
         return redirect('/AdminDashboard');
+    }
+
+    public function PasswordPage() {
+        return view('auth.passwordconfirm');
+    }
+
+    public function ChangePassword(Request $request, $id) {
+        $userID = User::where('id', $id)->first();
+
+
+        $userID->password = Hash::make($request->password);
+        $userID->FirstTimeLogin = 0;
+
+        $userID->save();
+
+        return redirect('/userDashboard');
+
     }
 }

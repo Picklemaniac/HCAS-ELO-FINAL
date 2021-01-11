@@ -15,7 +15,7 @@
             <div class="card card-container">
                 <div class="card-header center">{{ __('Nieuw Acount Toevoegen') }}</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="/newUser">
                         @csrf
                         <div class="form-group row">
                             <div class="col-md-6 input">
@@ -34,10 +34,17 @@
 
                         <div class="form-group row">
                             <div class="col-md-6 input">
-                                <input id="teamnummer" type="text"
-                                       placeholder="Teamnummer"
-                                       class="form-control @error('teamnummer') is-invalid @enderror" name="teamnummer"
-                                       value="{{ old('teamnummer') }}" required>
+{{--                                <input id="teamnummer" type="text"--}}
+{{--                                       placeholder="Teamnummer"--}}
+{{--                                       class="form-control @error('teamnummer') is-invalid @enderror" name="teamnummer"--}}
+{{--                                       value="{{ old('teamnummer') }}" required>--}}
+
+                                <select name="teamnummer" id="teamnummer" >
+                                    @foreach($teams as $t)
+                                        <option>{{$t->TeamNaam}}</option>
+                                    @endforeach
+                                </select>
+
 
                                 @error('teamnummer')
                                 <span class="invalid-feedback" role="alert">
@@ -103,44 +110,6 @@
                                         <strong>Emailadress is al in gebruik</strong>
                                     </span>
                                 @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 input">
-                                <input id="username" type="text"
-                                       placeholder="Gebruikersnaam"
-                                       class="form-control @error('username') is-invalid @enderror" name="username"
-                                       value="{{ old('username') }}">
-
-                                @error('username')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 input">
-                                <input id="password" type="password"
-                                       placeholder="Wachtwoord"
-                                       class="form-control @error('password') is-invalid @enderror" name="password"
-                                       required autocomplete="new-password">
-
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 input">
-                                <input id="password-confirm" type="password" class="form-control"
-                                       placeholder="Herhaal Wachtwoord"
-                                       name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
