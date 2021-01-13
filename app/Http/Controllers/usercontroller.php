@@ -56,6 +56,19 @@ class usercontroller extends Controller
         $userID->save();
 
         return redirect('/userDashboard');
+    }
 
+    public function resetPassword($id) {
+        $userID = User::where('id', $id)->first();
+        $userID->password = Hash::make('hcastest');
+        $userID->FirstTimeLogin = 1;
+        $userID->save();
+        return redirect('/AdminDashboard')->with('success', 'Wachtwoord gereset');
+    }
+
+    public function deleteUser($id) {
+
+        User::where('id', $id)->delete();
+        return redirect('/AdminDashboard');
     }
 }

@@ -25,23 +25,28 @@
 
                 <div class="w3-container">
                     <table id="gebruikers">
-                        <tr><td>@sortablelink('achternaam')</td><td>@sortablelink('tussenvoegsel')</td><td>@sortablelink('voornaam')</td><td>Rollen</td></tr>
+                        <tr><td>@sortablelink('achternaam')</td><td>@sortablelink('tussenvoegsel')</td><td>@sortablelink('voornaam')</td><td>Rollen</td><td>Acties</td></tr>
                     @foreach ($users as $u)
                         <tr><td>{{$u->achternaam}}</td><td>{{$u->tussenvoegsel}} </td><td>{{$u->voornaam}}</td>
                         <td>
                             Admin: @if($u->IsAdmin == 1) <input type="checkbox" onclick="window.location.href='/MakeAdmin{{$u->id}}'" checked/> @else <input type="checkbox" onclick="window.location.href='/MakeAdmin{{$u->id}}'"/> @endif
                             Auteur: @if($u->IsAuthor == 1) <input type="checkbox" onclick="window.location.href='/MakeAuthor{{$u->id}}'" checked/> @else <input type="checkbox" onclick="window.location.href='/MakeAuthor{{$u->id}}'"/> @endif
                             Trainer: @if($u->IsTrainer == 1) <input type="checkbox" onclick="window.location.href='/MakeTrainer{{$u->id}}'" checked /> @else <input type="checkbox" onclick="window.location.href='/MakeTrainer{{$u->id}}'"/> @endif
-
                         </td>
+                        <td> <button onclick="window.location.href='/resetPassword{{$u->id}}'">Reset wachtwoord</button> <button onclick="window.location.href='/deleteUser{{$u->id}}'">Verwijder</button> </td>
                         </tr>
                     @endforeach
                     </table>
                     <p></p>
                     {!! $users->appends(\Request::except('page'))->render() !!}
                 </div>
+                @if(session()->has('success'))
+                    <h5 class="alert-success"> {{ session()->get('success') }}</h5>
+                @endif
             </div>
         </div>
+
+
 
         <div class="w3-col l4">
             <div class="w3-card w3-margin w3-margin-top">

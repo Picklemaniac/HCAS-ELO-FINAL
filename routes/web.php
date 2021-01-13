@@ -22,6 +22,11 @@ Route::get('/registreren', [admincontroller::class, 'register'])->middleware('au
 
 Route::post('/newUser', [admincontroller::class, 'newUser'])->middleware('auth');
 
+Route::get('/resetPassword{id}', [usercontroller::class, 'resetPassword'])->middleware('auth');
+
+Route::get('/deleteUser{id}', [usercontroller::class, 'deleteUser'])->middleware('auth');
+
+
 /*--------*/
 
 /* User Dashboard*/
